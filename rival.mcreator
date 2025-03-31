@@ -8,11 +8,11 @@
       "registry_name": "test",
       "metadata": {
         "files": [
-          "src/main/resources/data/rival/loot_tables/blocks/test.json",
-          "src/main/resources/assets/rival/blockstates/test.json",
-          "src/main/resources/assets/rival/models/item/test.json",
           "src/main/resources/assets/rival/models/block/test.json",
-          "src/main/java/net/mcreator/rival/block/TestBlock.java"
+          "src/main/resources/assets/rival/blockstates/test.json",
+          "src/main/java/net/mcreator/rival/block/TestBlock.java",
+          "src/main/resources/data/rival/loot_tables/blocks/test.json",
+          "src/main/resources/assets/rival/models/item/test.json"
         ]
       }
     },
@@ -24,11 +24,11 @@
       "registry_name": "barindirmasin",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/block/BarindirmasinBlock.java",
           "src/main/resources/assets/rival/models/block/barindirmasin.json",
-          "src/main/resources/assets/rival/blockstates/barindirmasin.json",
+          "src/main/resources/data/rival/loot_tables/blocks/barindirmasin.json",
           "src/main/resources/assets/rival/models/item/barindirmasin.json",
-          "src/main/resources/data/rival/loot_tables/blocks/barindirmasin.json"
+          "src/main/resources/assets/rival/blockstates/barindirmasin.json",
+          "src/main/java/net/mcreator/rival/block/BarindirmasinBlock.java"
         ]
       }
     },
@@ -47,6 +47,39 @@
           "src/main/resources/assets/rival/blockstates/dayak.json"
         ]
       }
+    },
+    {
+      "name": "BenEntityIsHurt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ben_entity_is_hurt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/BenEntityIsHurtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ben",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ben",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/entity/BenEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/BenRenderer.java",
+          "src/main/resources/assets/rival/models/item/ben_spawn_egg.json",
+          "src/main/resources/data/rival/forge/biome_modifier/ben_biome_modifier.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -55,7 +88,9 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "entity.rival.ben": "Ben",
       "block.rival.dayak": "Dayak",
+      "item.rival.ben_spawn_egg": "Ben Spawn Egg",
       "block.rival.test": "Test",
       "block.rival.barindirmasin": "Barindirmasin"
     }

@@ -7,6 +7,7 @@ package net.mcreator.rival.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
@@ -19,6 +20,7 @@ public class RivalModItems {
 	public static final RegistryObject<Item> TEST = block(RivalModBlocks.TEST);
 	public static final RegistryObject<Item> BARINDIRMASIN = block(RivalModBlocks.BARINDIRMASIN);
 	public static final RegistryObject<Item> DAYAK = block(RivalModBlocks.DAYAK);
+	public static final RegistryObject<Item> BEN_SPAWN_EGG = REGISTRY.register("ben_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.BEN, -1, -1, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

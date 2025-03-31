@@ -1,5 +1,7 @@
 {
+  "entity.rival.ben": "Ben",
   "block.rival.dayak": "Dayak",
+  "item.rival.ben_spawn_egg": "Ben Spawn Egg",
   "block.rival.test": "Test",
   "block.rival.barindirmasin": "Barindirmasin"
 }
