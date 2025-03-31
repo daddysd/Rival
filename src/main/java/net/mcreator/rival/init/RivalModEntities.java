@@ -19,17 +19,12 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
-import net.mcreator.rival.entity.CrossbowPillagerEntity;
 import net.mcreator.rival.entity.AxePillagerEntity;
 import net.mcreator.rival.RivalMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RivalModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, RivalMod.MODID);
-	public static final RegistryObject<EntityType<CrossbowPillagerEntity>> CROSSBOW_PILLAGER = register("crossbow_pillager",
-			EntityType.Builder.<CrossbowPillagerEntity>of(CrossbowPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CrossbowPillagerEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<SwordPillagerEntity>> SWORD_PILLAGER = register("sword_pillager",
 			EntityType.Builder.<SwordPillagerEntity>of(SwordPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SwordPillagerEntity::new)
 
@@ -56,7 +51,6 @@ public class RivalModEntities {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			CrossbowPillagerEntity.init();
 			SwordPillagerEntity.init();
 			AxePillagerEntity.init();
 			SpearPillagerEntity.init();
@@ -66,7 +60,6 @@ public class RivalModEntities {
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(CROSSBOW_PILLAGER.get(), CrossbowPillagerEntity.createAttributes().build());
 		event.put(SWORD_PILLAGER.get(), SwordPillagerEntity.createAttributes().build());
 		event.put(AXE_PILLAGER.get(), AxePillagerEntity.createAttributes().build());
 		event.put(SPEAR_PILLAGER.get(), SpearPillagerEntity.createAttributes().build());

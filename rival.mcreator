@@ -1,26 +1,9 @@
 {
   "mod_elements": [
     {
-      "name": "CrossbowPillager",
-      "type": "animatedentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "crossbow_pillager",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/rival/forge/biome_modifier/crossbow_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/client/renderer/CrossbowPillagerRenderer.java",
-          "src/main/java/net/mcreator/rival/entity/model/CrossbowPillagerModel.java",
-          "src/main/resources/assets/rival/models/item/crossbow_pillager_spawn_egg.json",
-          "src/main/java/net/mcreator/rival/entity/CrossbowPillagerEntity.java"
-        ]
-      },
-      "path": "~/Entities/Normal Entities"
-    },
-    {
       "name": "SwordPillager",
       "type": "animatedentity",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "sword_pillager",
       "metadata": {
@@ -103,11 +86,11 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "entity.rival.crossbow_pillager": "Crossbow Pillager",
       "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
+      "item.rival.sword_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
+      "entity.rival.sword_pillager": "Crossbow Pillager",
       "entity.rival.axe_pillager": "Crossbow Pillager",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
-      "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.axe_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "entity.rival.spear_pillager": "Crossbow Pillager",
       "entity.rival.miner_pillager": "Crossbow Pillager"

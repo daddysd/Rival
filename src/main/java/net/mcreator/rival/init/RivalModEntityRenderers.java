@@ -12,14 +12,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.rival.client.renderer.SwordPillagerRenderer;
 import net.mcreator.rival.client.renderer.SpearPillagerRenderer;
 import net.mcreator.rival.client.renderer.MinerPillagerRenderer;
-import net.mcreator.rival.client.renderer.CrossbowPillagerRenderer;
 import net.mcreator.rival.client.renderer.AxePillagerRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RivalModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(RivalModEntities.CROSSBOW_PILLAGER.get(), CrossbowPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SWORD_PILLAGER.get(), SwordPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.AXE_PILLAGER.get(), AxePillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SPEAR_PILLAGER.get(), SpearPillagerRenderer::new);
