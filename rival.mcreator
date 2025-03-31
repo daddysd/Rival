@@ -15,6 +15,22 @@
           "src/main/java/net/mcreator/rival/block/TestBlock.java"
         ]
       }
+    },
+    {
+      "name": "Barindirmasin",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barindirmasin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/rival/models/block/barindirmasin.json",
+          "src/main/resources/data/rival/loot_tables/blocks/barindirmasin.json",
+          "src/main/resources/assets/rival/models/item/barindirmasin.json",
+          "src/main/resources/assets/rival/blockstates/barindirmasin.json",
+          "src/main/java/net/mcreator/rival/block/BarindirmasinBlock.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -23,7 +39,8 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "block.rival.test": "Test"
+      "block.rival.test": "Test",
+      "block.rival.barindirmasin": "Barindirmasin"
     }
   },
   "foldersRoot": {

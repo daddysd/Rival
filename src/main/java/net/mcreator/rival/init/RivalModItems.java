@@ -17,6 +17,7 @@ import net.mcreator.rival.RivalMod;
 public class RivalModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, RivalMod.MODID);
 	public static final RegistryObject<Item> TEST = block(RivalModBlocks.TEST);
+	public static final RegistryObject<Item> BARINDIRMASIN = block(RivalModBlocks.BARINDIRMASIN);
 
 	// Start of user code block custom items
 	// End of user code block custom items
