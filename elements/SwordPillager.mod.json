@@ -2,7 +2,7 @@
   "_fv": 73,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Crossbow Pillager",
+    "mobName": "Sword Pillager",
     "mobLabel": "",
     "mobModelTexture": "truck.png",
     "mobModelGlowTexture": "",
@@ -20,7 +20,7 @@
     "stepHeight": 0.6,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -11719630,
       "falpha": 0.0
     },
     "spawnEggDotColor": {

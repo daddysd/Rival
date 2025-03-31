@@ -92,13 +92,13 @@
       "value": ""
     },
     "livingSound": {
-      "value": ""
+      "value": "entity.pillager.ambient"
     },
     "hurtSound": {
-      "value": "entity.generic.hurt"
+      "value": "entity.pillager.hurt"
     },
     "deathSound": {
-      "value": "entity.generic.death"
+      "value": "entity.pillager.death"
     },
     "stepSound": {
       "value": ""
