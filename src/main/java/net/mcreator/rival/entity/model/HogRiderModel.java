@@ -1,5 +1,7 @@
 package net.mcreator.rival.entity.model;
 
+import net.minecraft.resources.ResourceLocation;
+
 import software.bernie.geckolib.core.animation.AnimationState;
 
 public class HogRiderModel extends GeoModel<HogRiderEntity> {

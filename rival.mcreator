@@ -164,7 +164,7 @@
     {
       "name": "BadVillager",
       "type": "animatedentity",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "bad_villager",
       "metadata": {
@@ -181,7 +181,7 @@
     {
       "name": "HogRider",
       "type": "animatedentity",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "hog_rider",
       "metadata": {
@@ -198,7 +198,7 @@
     {
       "name": "RoyalGuards",
       "type": "animatedentity",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "royal_guards",
       "metadata": {
