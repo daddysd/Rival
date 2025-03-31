@@ -15,6 +15,22 @@
           "src/main/java/net/mcreator/rival/block/TestBlock.java"
         ]
       }
+    },
+    {
+      "name": "Dayak",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayak",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/block/DayakBlock.java",
+          "src/main/resources/data/rival/loot_tables/blocks/dayak.json",
+          "src/main/resources/assets/rival/models/item/dayak.json",
+          "src/main/resources/assets/rival/models/block/dayak.json",
+          "src/main/resources/assets/rival/blockstates/dayak.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -23,6 +39,7 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "block.rival.dayak": "Dayak",
       "block.rival.test": "Test"
     }
   },
