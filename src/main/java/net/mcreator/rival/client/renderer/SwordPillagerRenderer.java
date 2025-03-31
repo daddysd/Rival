@@ -9,26 +9,26 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcreator.rival.entity.model.CrossbowPillagerModel;
-import net.mcreator.rival.entity.CrossbowPillagerEntity;
+import net.mcreator.rival.entity.model.SwordPillagerModel;
+import net.mcreator.rival.entity.SwordPillagerEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class CrossbowPillagerRenderer extends GeoEntityRenderer<CrossbowPillagerEntity> {
-	public CrossbowPillagerRenderer(EntityRendererProvider.Context renderManager) {
-		super(renderManager, new CrossbowPillagerModel());
+public class SwordPillagerRenderer extends GeoEntityRenderer<SwordPillagerEntity> {
+	public SwordPillagerRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new SwordPillagerModel());
 		this.shadowRadius = 0.5f;
 	}
 
 	@Override
-	public RenderType getRenderType(CrossbowPillagerEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+	public RenderType getRenderType(SwordPillagerEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 
 	@Override
-	public void preRender(PoseStack poseStack, CrossbowPillagerEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red,
-			float green, float blue, float alpha) {
+	public void preRender(PoseStack poseStack, SwordPillagerEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
+			float blue, float alpha) {
 		float scale = 1f;
 		this.scaleHeight = scale;
 		this.scaleWidth = scale;
@@ -36,7 +36,7 @@ public class CrossbowPillagerRenderer extends GeoEntityRenderer<CrossbowPillager
 	}
 
 	@Override
-	protected float getDeathMaxRotation(CrossbowPillagerEntity entityLivingBaseIn) {
+	protected float getDeathMaxRotation(SwordPillagerEntity entityLivingBaseIn) {
 		return 0.0F;
 	}
 }

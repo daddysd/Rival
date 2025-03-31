@@ -16,6 +16,23 @@
         ]
       },
       "path": "~/Entities/Normal Entities"
+    },
+    {
+      "name": "SwordPillager",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_pillager",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/sword_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/SwordPillagerEntity.java",
+          "src/main/resources/assets/rival/models/item/sword_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/SwordPillagerModel.java",
+          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerRenderer.java"
+        ]
+      },
+      "path": "~/Entities/Normal Entities"
     }
   ],
   "variable_elements": [],
@@ -25,6 +42,8 @@
   "language_map": {
     "en_us": {
       "entity.rival.crossbow_pillager": "Crossbow Pillager",
+      "item.rival.sword_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
+      "entity.rival.sword_pillager": "Crossbow Pillager",
       "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg"
     }
   },

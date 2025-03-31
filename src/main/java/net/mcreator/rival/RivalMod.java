@@ -17,6 +17,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.rival.init.RivalModTabs;
 import net.mcreator.rival.init.RivalModItems;
 import net.mcreator.rival.init.RivalModEntities;
 
@@ -42,6 +43,8 @@ public class RivalMod {
 
 		RivalModItems.REGISTRY.register(bus);
 		RivalModEntities.REGISTRY.register(bus);
+
+		RivalModTabs.REGISTRY.register(bus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
