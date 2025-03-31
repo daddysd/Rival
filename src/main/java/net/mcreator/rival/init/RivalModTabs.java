@@ -21,7 +21,12 @@ public class RivalModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+		if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+			tabData.accept(RivalModBlocks.TEST.get().asItem());
+			tabData.accept(RivalModBlocks.DAYAK.get().asItem());
+		} else if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			tabData.accept(RivalModBlocks.BARINDIRMASIN.get().asItem());
+		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(RivalModItems.BEN_SPAWN_EGG.get());
 		}
 	}
