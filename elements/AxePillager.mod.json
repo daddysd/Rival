@@ -2,7 +2,7 @@
   "_fv": 73,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Crossbow Pillager",
+    "mobName": "Axe Pillager",
     "mobLabel": "",
     "mobModelTexture": "truck.png",
     "mobModelGlowTexture": "",
@@ -20,7 +20,7 @@
     "stepHeight": 0.6,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -11719630,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
@@ -55,14 +55,14 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "ILLAGER",
-    "attackStrength": 3,
+    "attackStrength": 15,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 30,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
