@@ -24,14 +24,11 @@
       "registry_name": "barindirmasin",
       "metadata": {
         "files": [
-          "src/main/resources/assets/rival/models/block/barindirmasin.json",
-          "src/main/resources/data/rival/loot_tables/blocks/barindirmasin.json",
-          "src/main/resources/assets/rival/models/item/barindirmasin.json",
-          "src/main/resources/assets/rival/blockstates/barindirmasin.json",
           "src/main/java/net/mcreator/rival/block/BarindirmasinBlock.java",
-          "src/main/resources/data/rival/forge/biome_modifier/barindirmasin_biome_modifier.json",
-          "src/main/resources/data/rival/worldgen/configured_feature/barindirmasin.json",
-          "src/main/resources/data/rival/worldgen/placed_feature/barindirmasin.json"
+          "src/main/resources/assets/rival/models/block/barindirmasin.json",
+          "src/main/resources/assets/rival/blockstates/barindirmasin.json",
+          "src/main/resources/assets/rival/models/item/barindirmasin.json",
+          "src/main/resources/data/rival/loot_tables/blocks/barindirmasin.json"
         ]
       }
     },
