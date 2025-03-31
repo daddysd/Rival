@@ -16,6 +16,17 @@
         ]
       },
       "path": "~/Entities/Normal Entities"
+    },
+    {
+      "name": "Mobs",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mobs",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Other etc./Creative Tabs"
     }
   ],
   "variable_elements": [],
@@ -25,6 +36,7 @@
   "language_map": {
     "en_us": {
       "entity.rival.crossbow_pillager": "Crossbow Pillager",
+      "item_group.rival.mobs": "Mobs",
       "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg"
     }
   },
@@ -93,6 +105,15 @@
       {
         "name": "Advancments",
         "children": []
+      },
+      {
+        "name": "Other etc.",
+        "children": [
+          {
+            "name": "Creative Tabs",
+            "children": []
+          }
+        ]
       }
     ]
   },
