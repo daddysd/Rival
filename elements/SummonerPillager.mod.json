@@ -51,7 +51,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "ILLAGER",
-    "attackStrength": 20,
+    "attackStrength": 7,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
@@ -101,6 +101,9 @@
     },
     "raidCelebrationSound": {
       "value": ""
+    },
+    "whenMobIsHurt": {
+      "name": "SummonerPillagerEntityIsHurt"
     },
     "hasAI": true,
     "aiBase": "(none)",

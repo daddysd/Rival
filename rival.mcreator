@@ -95,6 +95,54 @@
         ]
       },
       "path": "~/Entities/Normal Entities"
+    },
+    {
+      "name": "SummonerPillager",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summoner_pillager",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/rival/models/item/summoner_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/SummonerPillagerRenderer.java",
+          "src/main/resources/data/rival/forge/biome_modifier/summoner_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/model/SummonerPillagerModel.java",
+          "src/main/java/net/mcreator/rival/entity/SummonerPillagerEntity.java"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "SummonerPillagerEntityIsHurt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "summoner_pillager_entity_is_hurt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/SummonerPillagerEntityIsHurtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
     }
   ],
   "variable_elements": [],
@@ -104,15 +152,17 @@
   "language_map": {
     "en_us": {
       "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
-      "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
-      "entity.rival.sword_pillager": "Sword Pillager",
       "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
       "entity.rival.mage_pillager": "Mage Pillager",
-      "entity.rival.axe_pillager": "Axe Pillager",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
+      "entity.rival.summoner_pillager": "Mage Pillager",
+      "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
+      "entity.rival.sword_pillager": "Sword Pillager",
+      "entity.rival.axe_pillager": "Axe Pillager",
       "entity.rival.spear_pillager": "Crossbow Pillager",
-      "entity.rival.miner_pillager": "Crossbow Pillager"
+      "entity.rival.miner_pillager": "Crossbow Pillager",
+      "item.rival.summoner_pillager_spawn_egg": "Mage Pillager Spawn Egg"
     }
   },
   "foldersRoot": {
