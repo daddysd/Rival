@@ -58,6 +58,18 @@
       "metadata": {
         "files": []
       }
+    },
+    {
+      "name": "Basarim",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "basarim",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/advancements/basarim.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -69,7 +81,9 @@
       "item_group.rival.hackermenu": "Hackermenu",
       "entity.rival.ben": "Ben",
       "item.rival.ben_spawn_egg": "Ben Spawn Egg",
-      "block.rival.barindirmasin": "Barindirmasin"
+      "advancements.basarim.title": "Basarim",
+      "block.rival.barindirmasin": "Barindirmasin",
+      "advancements.basarim.descr": "blokkoy"
     }
   },
   "foldersRoot": {
