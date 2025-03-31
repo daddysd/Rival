@@ -23,9 +23,12 @@ public class RivalModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(RivalModItems.SWORD_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.MAGE_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.SPEAR_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.AXE_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.MINER_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.SUMMONER_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.WITCH_SPAWN_EGG.get());
 		}
 	}
 }

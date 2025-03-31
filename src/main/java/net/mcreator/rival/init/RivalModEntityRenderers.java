@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.rival.client.renderer.WitchRenderer;
 import net.mcreator.rival.client.renderer.SwordPillagerRenderer;
 import net.mcreator.rival.client.renderer.SummonerPillagerRenderer;
 import net.mcreator.rival.client.renderer.SpearPillagerRenderer;
@@ -26,5 +27,6 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.AXE_PILLAGER.get(), AxePillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.MINER_PILLAGER.get(), MinerPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SUMMONER_PILLAGER.get(), SummonerPillagerRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.WITCH.get(), WitchRenderer::new);
 	}
 }

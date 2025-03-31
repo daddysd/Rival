@@ -143,6 +143,23 @@
         ]
       },
       "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "Witch",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "witch",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/rival/models/item/witch_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/WitchModel.java",
+          "src/main/java/net/mcreator/rival/entity/WitchEntity.java",
+          "src/main/resources/data/rival/forge/biome_modifier/witch_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/client/renderer/WitchRenderer.java"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
     }
   ],
   "variable_elements": [],
@@ -155,11 +172,13 @@
       "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
       "entity.rival.mage_pillager": "Mage Pillager",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
-      "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
       "entity.rival.summoner_pillager": "Mage Pillager",
+      "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
       "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
       "entity.rival.sword_pillager": "Sword Pillager",
+      "entity.rival.witch": "Mage Pillager",
       "entity.rival.axe_pillager": "Axe Pillager",
+      "item.rival.witch_spawn_egg": "Mage Pillager Spawn Egg",
       "entity.rival.spear_pillager": "Crossbow Pillager",
       "entity.rival.miner_pillager": "Crossbow Pillager",
       "item.rival.summoner_pillager_spawn_egg": "Mage Pillager Spawn Egg"

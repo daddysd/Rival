@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.rival.entity.WitchEntity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
 import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
@@ -51,6 +52,10 @@ public class RivalModEntities {
 			EntityType.Builder.<SummonerPillagerEntity>of(SummonerPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SummonerPillagerEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<WitchEntity>> WITCH = register("witch",
+			EntityType.Builder.<WitchEntity>of(WitchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WitchEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -67,6 +72,7 @@ public class RivalModEntities {
 			AxePillagerEntity.init();
 			MinerPillagerEntity.init();
 			SummonerPillagerEntity.init();
+			WitchEntity.init();
 		});
 	}
 
@@ -78,5 +84,6 @@ public class RivalModEntities {
 		event.put(AXE_PILLAGER.get(), AxePillagerEntity.createAttributes().build());
 		event.put(MINER_PILLAGER.get(), MinerPillagerEntity.createAttributes().build());
 		event.put(SUMMONER_PILLAGER.get(), SummonerPillagerEntity.createAttributes().build());
+		event.put(WITCH.get(), WitchEntity.createAttributes().build());
 	}
 }

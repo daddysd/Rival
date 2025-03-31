@@ -45,21 +45,21 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.rival.procedures.SummonerPillagerEntityIsHurtProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
-public class SummonerPillagerEntity extends Monster implements GeoEntity {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SummonerPillagerEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SummonerPillagerEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SummonerPillagerEntity.class, EntityDataSerializers.STRING);
+public class WitchEntity extends Monster implements GeoEntity {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WitchEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(WitchEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(WitchEntity.class, EntityDataSerializers.STRING);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
 	public String animationprocedure = "empty";
 
-	public SummonerPillagerEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(RivalModEntities.SUMMONER_PILLAGER.get(), world);
+	public WitchEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(RivalModEntities.WITCH.get(), world);
 	}
 
-	public SummonerPillagerEntity(EntityType<SummonerPillagerEntity> type, Level world) {
+	public WitchEntity(EntityType<WitchEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -153,7 +153,7 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(RivalModEntities.SUMMONER_PILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+		SpawnPlacements.register(RivalModEntities.WITCH.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
@@ -202,7 +202,7 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 	protected void tickDeath() {
 		++this.deathTime;
 		if (this.deathTime == 20) {
-			this.remove(SummonerPillagerEntity.RemovalReason.KILLED);
+			this.remove(WitchEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}
 	}
