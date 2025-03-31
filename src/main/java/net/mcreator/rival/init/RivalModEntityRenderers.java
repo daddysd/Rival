@@ -10,6 +10,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.rival.client.renderer.SwordPillagerRenderer;
+import net.mcreator.rival.client.renderer.MagePillagerRenderer;
 import net.mcreator.rival.client.renderer.CrossbowPillagerRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -18,5 +19,6 @@ public class RivalModEntityRenderers {
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(RivalModEntities.CROSSBOW_PILLAGER.get(), CrossbowPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SWORD_PILLAGER.get(), SwordPillagerRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER.get(), MagePillagerRenderer::new);
 	}
 }

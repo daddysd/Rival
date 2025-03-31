@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.rival.entity.SwordPillagerEntity;
+import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.CrossbowPillagerEntity;
 import net.mcreator.rival.RivalMod;
 
@@ -31,6 +32,10 @@ public class RivalModEntities {
 			EntityType.Builder.<SwordPillagerEntity>of(SwordPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SwordPillagerEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MagePillagerEntity>> MAGE_PILLAGER = register("mage_pillager",
+			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -43,6 +48,7 @@ public class RivalModEntities {
 		event.enqueueWork(() -> {
 			CrossbowPillagerEntity.init();
 			SwordPillagerEntity.init();
+			MagePillagerEntity.init();
 		});
 	}
 
@@ -50,5 +56,6 @@ public class RivalModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(CROSSBOW_PILLAGER.get(), CrossbowPillagerEntity.createAttributes().build());
 		event.put(SWORD_PILLAGER.get(), SwordPillagerEntity.createAttributes().build());
+		event.put(MAGE_PILLAGER.get(), MagePillagerEntity.createAttributes().build());
 	}
 }

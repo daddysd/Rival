@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.rival.entity.SwordPillagerEntity;
+import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.CrossbowPillagerEntity;
 
 @Mod.EventBusSubscriber
@@ -20,6 +21,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof SwordPillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof MagePillagerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

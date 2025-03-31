@@ -20,7 +20,7 @@
     {
       "name": "SwordPillager",
       "type": "animatedentity",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "sword_pillager",
       "metadata": {
@@ -44,6 +44,23 @@
         "files": []
       },
       "path": "~/Other etc./Creative Tabs"
+    },
+    {
+      "name": "MagePillager",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mage_pillager",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java",
+          "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java",
+          "src/main/java/net/mcreator/rival/entity/MagePillagerEntity.java",
+          "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
     }
   ],
   "variable_elements": [],
@@ -53,6 +70,8 @@
   "language_map": {
     "en_us": {
       "entity.rival.crossbow_pillager": "Crossbow Pillager",
+      "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
+      "entity.rival.mage_pillager": "Mage Pillager",
       "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg"
     }
   },
