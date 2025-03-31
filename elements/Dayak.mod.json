@@ -4,7 +4,7 @@
   "definition": {
     "texture": "minecraft:birch_trapdoor",
     "textureTop": "minecraft:birch_trapdoor",
-    "textureLeft": "minecraft:birch_trapdoor",
+    "textureLeft": "minecraft:blue_shulker_box",
     "textureFront": "minecraft:birch_trapdoor",
     "textureRight": "minecraft:birch_trapdoor",
     "textureBack": "minecraft:birch_trapdoor",
