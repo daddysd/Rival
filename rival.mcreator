@@ -1,11 +1,32 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "CrossbowPillager",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crossbow_pillager",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/crossbow_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/client/renderer/CrossbowPillagerRenderer.java",
+          "src/main/java/net/mcreator/rival/entity/model/CrossbowPillagerModel.java",
+          "src/main/resources/assets/rival/models/item/crossbow_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/CrossbowPillagerEntity.java"
+        ]
+      },
+      "path": "~/Entities/Normal Entities"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "entity.rival.crossbow_pillager": "Crossbow Pillager",
+      "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg"
+    }
   },
   "foldersRoot": {
     "name": "~",
