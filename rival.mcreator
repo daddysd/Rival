@@ -160,6 +160,57 @@
         ]
       },
       "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "BadVillager",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bad_villager",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/client/renderer/BadVillagerRenderer.java",
+          "src/main/resources/assets/rival/models/item/bad_villager_spawn_egg.json",
+          "src/main/resources/data/rival/forge/biome_modifier/bad_villager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/BadVillagerEntity.java",
+          "src/main/java/net/mcreator/rival/entity/model/BadVillagerModel.java"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "HogRider",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hog_rider",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/hog_rider_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/HogRiderEntity.java",
+          "src/main/java/net/mcreator/rival/entity/model/HogRiderModel.java",
+          "src/main/resources/assets/rival/models/item/hog_rider_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/HogRiderRenderer.java"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "RoyalGuards",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "royal_guards",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/royal_guards_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/RoyalGuardsEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/RoyalGuardsRenderer.java",
+          "src/main/java/net/mcreator/rival/entity/model/RoyalGuardsModel.java",
+          "src/main/resources/assets/rival/models/item/royal_guards_spawn_egg.json"
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
     }
   ],
   "variable_elements": [],

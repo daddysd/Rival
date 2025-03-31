@@ -13,8 +13,11 @@ import net.mcreator.rival.client.renderer.WitchRenderer;
 import net.mcreator.rival.client.renderer.SwordPillagerRenderer;
 import net.mcreator.rival.client.renderer.SummonerPillagerRenderer;
 import net.mcreator.rival.client.renderer.SpearPillagerRenderer;
+import net.mcreator.rival.client.renderer.RoyalGuardsRenderer;
 import net.mcreator.rival.client.renderer.MinerPillagerRenderer;
 import net.mcreator.rival.client.renderer.MagePillagerRenderer;
+import net.mcreator.rival.client.renderer.HogRiderRenderer;
+import net.mcreator.rival.client.renderer.BadVillagerRenderer;
 import net.mcreator.rival.client.renderer.AxePillagerRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -28,5 +31,8 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.MINER_PILLAGER.get(), MinerPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SUMMONER_PILLAGER.get(), SummonerPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.WITCH.get(), WitchRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.BAD_VILLAGER.get(), BadVillagerRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.HOG_RIDER.get(), HogRiderRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.ROYAL_GUARDS.get(), RoyalGuardsRenderer::new);
 	}
 }

@@ -29,6 +29,9 @@ public class RivalModTabs {
 			tabData.accept(RivalModItems.MINER_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.SUMMONER_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.WITCH_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.BAD_VILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.HOG_RIDER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.ROYAL_GUARDS_SPAWN_EGG.get());
 		}
 	}
 }

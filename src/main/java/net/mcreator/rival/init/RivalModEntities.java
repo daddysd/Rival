@@ -20,8 +20,11 @@ import net.mcreator.rival.entity.WitchEntity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
 import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
+import net.mcreator.rival.entity.RoyalGuardsEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntity;
+import net.mcreator.rival.entity.HogRiderEntity;
+import net.mcreator.rival.entity.BadVillagerEntity;
 import net.mcreator.rival.entity.AxePillagerEntity;
 import net.mcreator.rival.RivalMod;
 
@@ -56,6 +59,18 @@ public class RivalModEntities {
 			EntityType.Builder.<WitchEntity>of(WitchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WitchEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BadVillagerEntity>> BAD_VILLAGER = register("bad_villager",
+			EntityType.Builder.<BadVillagerEntity>of(BadVillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BadVillagerEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<HogRiderEntity>> HOG_RIDER = register("hog_rider",
+			EntityType.Builder.<HogRiderEntity>of(HogRiderEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HogRiderEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RoyalGuardsEntity>> ROYAL_GUARDS = register("royal_guards",
+			EntityType.Builder.<RoyalGuardsEntity>of(RoyalGuardsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RoyalGuardsEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -73,6 +88,9 @@ public class RivalModEntities {
 			MinerPillagerEntity.init();
 			SummonerPillagerEntity.init();
 			WitchEntity.init();
+			BadVillagerEntity.init();
+			HogRiderEntity.init();
+			RoyalGuardsEntity.init();
 		});
 	}
 
@@ -85,5 +103,8 @@ public class RivalModEntities {
 		event.put(MINER_PILLAGER.get(), MinerPillagerEntity.createAttributes().build());
 		event.put(SUMMONER_PILLAGER.get(), SummonerPillagerEntity.createAttributes().build());
 		event.put(WITCH.get(), WitchEntity.createAttributes().build());
+		event.put(BAD_VILLAGER.get(), BadVillagerEntity.createAttributes().build());
+		event.put(HOG_RIDER.get(), HogRiderEntity.createAttributes().build());
+		event.put(ROYAL_GUARDS.get(), RoyalGuardsEntity.createAttributes().build());
 	}
 }
