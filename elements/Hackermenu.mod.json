@@ -1,0 +1,11 @@
+{
+  "_fv": 73,
+  "_type": "tab",
+  "definition": {
+    "name": "Hackermenu",
+    "icon": {
+      "value": "Blocks.GOLD_ORE"
+    },
+    "showSearch": false
+  }
+}

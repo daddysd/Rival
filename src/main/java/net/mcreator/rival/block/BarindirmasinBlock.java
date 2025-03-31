@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 
 public class BarindirmasinBlock extends Block {
 	public BarindirmasinBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(-1, 3600000));
 	}
 
 	@Override
