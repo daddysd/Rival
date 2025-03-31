@@ -31,6 +31,22 @@
           "src/main/java/net/mcreator/rival/block/BarindirmasinBlock.java"
         ]
       }
+    },
+    {
+      "name": "Dayak",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayak",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/loot_tables/blocks/dayak.json",
+          "src/main/resources/assets/rival/blockstates/dayak.json",
+          "src/main/resources/assets/rival/models/item/dayak.json",
+          "src/main/java/net/mcreator/rival/block/DayakBlock.java",
+          "src/main/resources/assets/rival/models/block/dayak.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -39,8 +55,7 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "block.rival.test": "Test",
-      "block.rival.barindirmasin": "Barindirmasin"
+      "block.rival.test": "Test"
     }
   },
   "foldersRoot": {

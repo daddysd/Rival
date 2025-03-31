@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/birch_trapdoor",
+    "up": "minecraft:block/birch_trapdoor",
+    "north": "minecraft:block/birch_trapdoor",
+    "east": "minecraft:block/birch_trapdoor",
+    "south": "minecraft:block/birch_trapdoor",
+    "west": "minecraft:block/birch_trapdoor",
+    "particle": "minecraft:block/birch_trapdoor"
+  },
+  "render_type": "solid"
+}
