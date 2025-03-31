@@ -4,7 +4,7 @@
   "definition": {
     "texture": "minecraft:amethyst_block",
     "textureTop": "minecraft:amethyst_block",
-    "textureLeft": "minecraft:amethyst_block",
+    "textureLeft": "minecraft:blue_ice",
     "textureFront": "minecraft:amethyst_block",
     "textureRight": "minecraft:amethyst_block",
     "textureBack": "minecraft:amethyst_block",
