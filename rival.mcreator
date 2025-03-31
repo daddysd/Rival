@@ -33,6 +33,17 @@
         ]
       },
       "path": "~/Entities/Normal Entities"
+    },
+    {
+      "name": "Mobs",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mobs",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Other etc./Creative Tabs"
     }
   ],
   "variable_elements": [],
@@ -42,8 +53,6 @@
   "language_map": {
     "en_us": {
       "entity.rival.crossbow_pillager": "Crossbow Pillager",
-      "item.rival.sword_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
-      "entity.rival.sword_pillager": "Crossbow Pillager",
       "item.rival.crossbow_pillager_spawn_egg": "Crossbow Pillager Spawn Egg"
     }
   },
@@ -51,46 +60,12 @@
     "name": "~",
     "children": [
       {
-        "name": "Blocks",
-        "children": []
-      },
-      {
-        "name": "Entities",
-        "children": [
-          {
-            "name": "Bosses",
-            "children": []
-          },
-          {
-            "name": "Normal Entities",
-            "children": []
-          },
-          {
-            "name": "Heavy Entities",
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "Structures",
-        "children": [
-          {
-            "name": "Easy",
-            "children": []
-          },
-          {
-            "name": "Medium",
-            "children": []
-          },
-          {
-            "name": "Hard",
-            "children": []
-          }
-        ]
-      },
-      {
         "name": "Items",
         "children": [
+          {
+            "name": "Armory",
+            "children": []
+          },
           {
             "name": "Boss Items",
             "children": []
@@ -100,17 +75,60 @@
             "children": []
           },
           {
-            "name": "Armory",
-            "children": []
-          },
-          {
             "name": "Food etc.",
             "children": []
           }
         ]
       },
       {
+        "name": "Entities",
+        "children": [
+          {
+            "name": "Bosses",
+            "children": []
+          },
+          {
+            "name": "Heavy Entities",
+            "children": []
+          },
+          {
+            "name": "Normal Entities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Structures",
+        "children": [
+          {
+            "name": "Medium",
+            "children": []
+          },
+          {
+            "name": "Hard",
+            "children": []
+          },
+          {
+            "name": "Easy",
+            "children": []
+          }
+        ]
+      },
+      {
         "name": "Advancments",
+        "children": []
+      },
+      {
+        "name": "Other etc.",
+        "children": [
+          {
+            "name": "Creative Tabs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Blocks",
         "children": []
       }
     ]
