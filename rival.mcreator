@@ -8,11 +8,11 @@
       "registry_name": "test",
       "metadata": {
         "files": [
-          "src/main/resources/data/rival/loot_tables/blocks/test.json",
-          "src/main/resources/assets/rival/blockstates/test.json",
-          "src/main/resources/assets/rival/models/item/test.json",
           "src/main/resources/assets/rival/models/block/test.json",
-          "src/main/java/net/mcreator/rival/block/TestBlock.java"
+          "src/main/resources/assets/rival/blockstates/test.json",
+          "src/main/java/net/mcreator/rival/block/TestBlock.java",
+          "src/main/resources/data/rival/loot_tables/blocks/test.json",
+          "src/main/resources/assets/rival/models/item/test.json"
         ]
       }
     },
@@ -55,7 +55,9 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "block.rival.test": "Test"
+      "block.rival.dayak": "Dayak",
+      "block.rival.test": "Test",
+      "block.rival.barindirmasin": "Barindirmasin"
     }
   },
   "foldersRoot": {
