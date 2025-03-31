@@ -1,6 +1,10 @@
 package net.mcreator.rival.entity.model;
 
-import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.model.GeoModel;
+
+import net.minecraft.resources.ResourceLocation;
+
+import net.mcreator.rival.entity.SpearPillagerEntity;
 
 public class SpearPillagerModel extends GeoModel<SpearPillagerEntity> {
 	@Override

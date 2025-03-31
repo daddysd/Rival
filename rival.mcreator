@@ -8,11 +8,11 @@
       "registry_name": "sword_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerRenderer.java",
+          "src/main/resources/data/rival/forge/biome_modifier/sword_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/SwordPillagerEntity.java",
           "src/main/resources/assets/rival/models/item/sword_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/model/SwordPillagerModel.java",
-          "src/main/resources/data/rival/forge/biome_modifier/sword_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/entity/SwordPillagerEntity.java"
+          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerRenderer.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -36,11 +36,11 @@
       "registry_name": "mage_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java",
-          "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java",
           "src/main/java/net/mcreator/rival/entity/MagePillagerEntity.java",
-          "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json"
+          "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json",
+          "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java"
         ]
       },
       "path": "~/Entities/Heavy Entities"
@@ -53,11 +53,11 @@
       "registry_name": "spear_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/model/SpearPillagerModel.java",
-          "src/main/java/net/mcreator/rival/client/renderer/SpearPillagerRenderer.java",
-          "src/main/resources/assets/rival/models/item/spear_pillager_spawn_egg.json",
           "src/main/resources/data/rival/forge/biome_modifier/spear_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/entity/SpearPillagerEntity.java"
+          "src/main/resources/assets/rival/models/item/spear_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/SpearPillagerEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/SpearPillagerRenderer.java",
+          "src/main/java/net/mcreator/rival/entity/model/SpearPillagerModel.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -70,11 +70,11 @@
       "registry_name": "axe_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/model/AxePillagerModel.java",
-          "src/main/resources/assets/rival/models/item/axe_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/AxePillagerEntity.java",
           "src/main/java/net/mcreator/rival/client/renderer/AxePillagerRenderer.java",
           "src/main/resources/data/rival/forge/biome_modifier/axe_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/entity/AxePillagerEntity.java"
+          "src/main/resources/assets/rival/models/item/axe_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/AxePillagerModel.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -87,11 +87,11 @@
       "registry_name": "miner_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/client/renderer/MinerPillagerRenderer.java",
           "src/main/resources/assets/rival/models/item/miner_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/MinerPillagerRenderer.java",
           "src/main/java/net/mcreator/rival/entity/MinerPillagerEntity.java",
-          "src/main/java/net/mcreator/rival/entity/model/MinerPillagerModel.java",
-          "src/main/resources/data/rival/forge/biome_modifier/miner_pillager_biome_modifier.json"
+          "src/main/resources/data/rival/forge/biome_modifier/miner_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/model/MinerPillagerModel.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -103,8 +103,16 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.sword_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
-      "entity.rival.sword_pillager": "Crossbow Pillager"
+      "entity.rival.sword_pillager": "Crossbow Pillager",
+      "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
+      "entity.rival.mage_pillager": "Mage Pillager",
+      "entity.rival.axe_pillager": "Crossbow Pillager",
+      "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
+      "item.rival.axe_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
+      "entity.rival.spear_pillager": "Crossbow Pillager",
+      "entity.rival.miner_pillager": "Crossbow Pillager"
     }
   },
   "foldersRoot": {
