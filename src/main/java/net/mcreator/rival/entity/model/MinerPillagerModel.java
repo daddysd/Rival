@@ -2,19 +2,19 @@ package net.mcreator.rival.entity.model;
 
 import software.bernie.geckolib.core.animation.AnimationState;
 
-public class MagePillagerModel extends GeoModel<MagePillagerEntity> {
+public class MinerPillagerModel extends GeoModel<MinerPillagerEntity> {
 	@Override
-	public ResourceLocation getAnimationResource(MagePillagerEntity entity) {
+	public ResourceLocation getAnimationResource(MinerPillagerEntity entity) {
 		return new ResourceLocation("rival", "animations/truck.animation.json");
 	}
 
 	@Override
-	public ResourceLocation getModelResource(MagePillagerEntity entity) {
+	public ResourceLocation getModelResource(MinerPillagerEntity entity) {
 		return new ResourceLocation("rival", "geo/truck.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureResource(MagePillagerEntity entity) {
+	public ResourceLocation getTextureResource(MinerPillagerEntity entity) {
 		return new ResourceLocation("rival", "textures/entities/" + entity.getTexture() + ".png");
 	}
 

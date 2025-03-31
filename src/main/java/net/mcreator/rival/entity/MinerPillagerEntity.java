@@ -14,10 +14,10 @@ import javax.annotation.Nullable;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationState;
 
-public class SwordPillagerEntity extends Monster implements GeoEntity {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.STRING);
+public class MinerPillagerEntity extends Monster implements GeoEntity {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MinerPillagerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MinerPillagerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MinerPillagerEntity.class, EntityDataSerializers.STRING);
 
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
@@ -25,11 +25,11 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	private long lastSwing;
 	public String animationprocedure = "empty";
 
-	public SwordPillagerEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(RivalModEntities.SWORD_PILLAGER.get(), world);
+	public MinerPillagerEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(RivalModEntities.MINER_PILLAGER.get(), world);
 	}
 
-	public SwordPillagerEntity(EntityType<SwordPillagerEntity> type, Level world) {
+	public MinerPillagerEntity(EntityType<MinerPillagerEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -117,7 +117,7 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(RivalModEntities.SWORD_PILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+		SpawnPlacements.register(RivalModEntities.MINER_PILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 
 	}
@@ -171,7 +171,7 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	protected void tickDeath() {
 		++this.deathTime;
 		if (this.deathTime == 20) {
-			this.remove(SwordPillagerEntity.RemovalReason.KILLED);
+			this.remove(MinerPillagerEntity.RemovalReason.KILLED);
 			this.dropExperience();
 
 		}

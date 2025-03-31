@@ -4,7 +4,7 @@
     "type": "forge:any"
   },
   "spawners": {
-    "type": "rival:crossbow_pillager",
+    "type": "rival:axe_pillager",
     "weight": 20,
     "minCount": 4,
     "maxCount": 4
