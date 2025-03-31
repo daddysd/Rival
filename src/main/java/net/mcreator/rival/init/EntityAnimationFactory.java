@@ -8,8 +8,11 @@ import net.mcreator.rival.entity.WitchEntity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
 import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
+import net.mcreator.rival.entity.RoyalGuardsEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntity;
+import net.mcreator.rival.entity.HogRiderEntity;
+import net.mcreator.rival.entity.BadVillagerEntity;
 import net.mcreator.rival.entity.AxePillagerEntity;
 
 @Mod.EventBusSubscriber
@@ -60,6 +63,27 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof WitchEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof RoyalGuardsEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof BadVillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof HogRiderEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
