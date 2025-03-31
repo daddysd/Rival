@@ -17,7 +17,6 @@ import net.mcreator.rival.RivalMod;
 
 public class RivalModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, RivalMod.MODID);
-	public static final RegistryObject<Item> TEST = block(RivalModBlocks.TEST);
 	public static final RegistryObject<Item> BARINDIRMASIN = block(RivalModBlocks.BARINDIRMASIN);
 	public static final RegistryObject<Item> BEN_SPAWN_EGG = REGISTRY.register("ben_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.BEN, -1, -1, new Item.Properties()));
 
