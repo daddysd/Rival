@@ -5,7 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.rival.entity.SwordPillagerEntity;
+import net.mcreator.rival.entity.SpearPillagerEntity;
+import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.CrossbowPillagerEntity;
+import net.mcreator.rival.entity.AxePillagerEntity;
 
 @Mod.EventBusSubscriber
 public class EntityAnimationFactory {
@@ -20,6 +23,27 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof SwordPillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof AxePillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SpearPillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof MinerPillagerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

@@ -24,6 +24,9 @@ public class RivalModTabs {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(RivalModItems.CROSSBOW_PILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.SWORD_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.AXE_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.SPEAR_PILLAGER_SPAWN_EGG.get());
+			tabData.accept(RivalModItems.MINER_PILLAGER_SPAWN_EGG.get());
 		}
 	}
 }
