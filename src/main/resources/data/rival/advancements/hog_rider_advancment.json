@@ -1,0 +1,30 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "rival:hammer"
+    },
+    "title": {
+      "translate": "advancements.hog_rider_advancment.title"
+    },
+    "description": {
+      "translate": "advancements.hog_rider_advancment.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hog_rider_advancment_0": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "rival:hammer"
+          ]
+        }
+      }
+    }
+  }
+}

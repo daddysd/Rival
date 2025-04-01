@@ -32,6 +32,8 @@ public class RivalModTabs {
 			tabData.accept(RivalModItems.ROYAL_GUARDS_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.BAD_VILLAGER_SPAWN_EGG.get());
 			tabData.accept(RivalModItems.HOG_RIDER_SPAWN_EGG.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			tabData.accept(RivalModItems.HAMMER.get());
 		}
 	}
 }
