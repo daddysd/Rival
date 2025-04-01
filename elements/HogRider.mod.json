@@ -13,9 +13,9 @@
       "fixedValue": 1.0
     },
     "entityDataEntries": [],
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
-    "modelShadowSize": 0.5,
+    "modelWidth": 1.0,
+    "modelHeight": 2.5,
+    "modelShadowSize": 1.0,
     "mountedYOffset": 0.0,
     "stepHeight": 0.6,
     "hasSpawnEgg": true,
@@ -69,7 +69,7 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 60,
+    "deathTime": 55,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
@@ -105,6 +105,9 @@
     },
     "raidCelebrationSound": {
       "value": ""
+    },
+    "whenMobDies": {
+      "name": "HogRiderEntityDies"
     },
     "hasAI": true,
     "aiBase": "(none)",
@@ -160,7 +163,11 @@
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,
     "maxNumberOfMobsPerGroup": 4,
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:PenIsland"
+      }
+    ],
     "spawnInDungeons": false
   }
 }

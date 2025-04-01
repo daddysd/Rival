@@ -17,13 +17,19 @@
   },
   "criteria": {
     "hog_rider_advancment_0": {
-      "trigger": "minecraft:consume_item",
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "items": [
-            "rival:hammer"
-          ]
-        }
+        "items": [
+          {
+            "items": [
+              "rival:hammer"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
       }
     }
   }

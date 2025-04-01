@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class HogRiderRenderer extends GeoEntityRenderer<HogRiderEntity> {
 	public HogRiderRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new HogRiderModel());
-		this.shadowRadius = 0.5f;
+		this.shadowRadius = 1f;
 	}
 
 	@Override

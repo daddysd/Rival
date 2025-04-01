@@ -251,6 +251,37 @@
         ]
       },
       "path": "~/Advancments"
+    },
+    {
+      "name": "HogRiderEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hog_rider_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/HogRiderEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Heavy Entities"
     }
   ],
   "variable_elements": [],
@@ -263,8 +294,8 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "entity.rival.mage_pillager": "Mage Pillager",
       "item.rival.hammer": "Hammer",
+      "entity.rival.mage_pillager": "Mage Pillager",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
       "entity.rival.hog_rider": "Hog Rider",

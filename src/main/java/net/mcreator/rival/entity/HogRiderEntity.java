@@ -42,6 +42,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.rival.procedures.HogRiderEntityDiesProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
 public class HogRiderEntity extends Monster implements GeoEntity {
@@ -119,6 +120,12 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		HogRiderEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
@@ -215,7 +222,7 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 60) {
+		if (this.deathTime == 55) {
 			this.remove(HogRiderEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

@@ -70,7 +70,7 @@ public class RivalModEntities {
 	public static final RegistryObject<EntityType<HogRiderEntity>> HOG_RIDER = register("hog_rider",
 			EntityType.Builder.<HogRiderEntity>of(HogRiderEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HogRiderEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1f, 2.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
