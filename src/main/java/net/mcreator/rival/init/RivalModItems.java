@@ -24,7 +24,7 @@ public class RivalModItems {
 	public static final RegistryObject<Item> WITCH_SPAWN_EGG = REGISTRY.register("witch_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.WITCH, -11719630, -16776961, new Item.Properties()));
 	public static final RegistryObject<Item> ROYAL_GUARDS_SPAWN_EGG = REGISTRY.register("royal_guards_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.ROYAL_GUARDS, -11719630, -16776961, new Item.Properties()));
 	public static final RegistryObject<Item> BAD_VILLAGER_SPAWN_EGG = REGISTRY.register("bad_villager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.BAD_VILLAGER, -11719630, -16776961, new Item.Properties()));
-	public static final RegistryObject<Item> HOG_RIDER_SPAWN_EGG = REGISTRY.register("hog_rider_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.HOG_RIDER, -11719630, -16776961, new Item.Properties()));
+	public static final RegistryObject<Item> HOG_RIDER_SPAWN_EGG = REGISTRY.register("hog_rider_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.HOG_RIDER, -11719630, -39322, new Item.Properties()));
 	// Start of user code block custom items
 	// End of user code block custom items
 }

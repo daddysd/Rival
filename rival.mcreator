@@ -153,9 +153,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/rival/models/item/witch_spawn_egg.json",
-          "src/main/java/net/mcreator/rival/entity/model/WitchModel.java",
-          "src/main/java/net/mcreator/rival/entity/WitchEntity.java",
           "src/main/resources/data/rival/forge/biome_modifier/witch_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/WitchEntity.java",
+          "src/main/java/net/mcreator/rival/entity/model/WitchModel.java",
           "src/main/java/net/mcreator/rival/client/renderer/WitchRenderer.java"
         ]
       },
@@ -203,11 +203,11 @@
       "registry_name": "hog_rider",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/client/renderer/HogRiderRenderer.java",
           "src/main/resources/data/rival/forge/biome_modifier/hog_rider_biome_modifier.json",
-          "src/main/resources/assets/rival/models/item/hog_rider_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/HogRiderEntity.java",
-          "src/main/java/net/mcreator/rival/entity/model/HogRiderModel.java"
+          "src/main/java/net/mcreator/rival/entity/model/HogRiderModel.java",
+          "src/main/resources/assets/rival/models/item/hog_rider_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/HogRiderRenderer.java"
         ]
       },
       "path": "~/Entities/Heavy Entities"
