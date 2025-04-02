@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.rival.init.RivalModTabs;
+import net.mcreator.rival.init.RivalModSounds;
 import net.mcreator.rival.init.RivalModItems;
 import net.mcreator.rival.init.RivalModEntities;
 
@@ -40,6 +41,7 @@ public class RivalMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		RivalModSounds.REGISTRY.register(bus);
 
 		RivalModItems.REGISTRY.register(bus);
 		RivalModEntities.REGISTRY.register(bus);

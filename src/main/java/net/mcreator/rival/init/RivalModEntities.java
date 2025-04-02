@@ -23,6 +23,7 @@ import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
 import net.mcreator.rival.entity.RoyalGuardsEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
+import net.mcreator.rival.entity.MagePillagerEntityProjectile;
 import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.HogRiderEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
@@ -40,6 +41,8 @@ public class RivalModEntities {
 			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MagePillagerEntityProjectile>> MAGE_PILLAGER_PROJECTILE = register("projectile_mage_pillager", EntityType.Builder.<MagePillagerEntityProjectile>of(MagePillagerEntityProjectile::new, MobCategory.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MagePillagerEntityProjectile::new).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<SpearPillagerEntity>> SPEAR_PILLAGER = register("spear_pillager",
 			EntityType.Builder.<SpearPillagerEntity>of(SpearPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpearPillagerEntity::new)
 

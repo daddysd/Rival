@@ -216,7 +216,7 @@ public class SwordPillagerDiamondSwordEntity extends Monster implements GeoEntit
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 48) {
+		if (this.deathTime == 45) {
 			this.remove(SwordPillagerDiamondSwordEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

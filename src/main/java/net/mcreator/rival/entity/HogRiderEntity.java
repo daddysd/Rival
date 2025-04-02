@@ -111,17 +111,17 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.ambient"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("rival:hogriderliving"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("rival:hogriderhurts"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("rival:hogriderdeath"));
 	}
 
 	@Override

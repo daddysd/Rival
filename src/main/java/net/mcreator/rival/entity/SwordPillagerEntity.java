@@ -43,6 +43,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.rival.procedures.SwordPillagerEntityDiesProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
 public class SwordPillagerEntity extends Monster implements GeoEntity {
@@ -120,6 +121,12 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.death"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SwordPillagerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
@@ -216,7 +223,7 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 48) {
+		if (this.deathTime == 45) {
 			this.remove(SwordPillagerEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

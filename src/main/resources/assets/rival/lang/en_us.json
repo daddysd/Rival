@@ -1,4 +1,5 @@
 {
+  "subtitles.hogriderhurts": "Hog Rider damaged",
   "entity.rival.mage_pillager": "Mage Pillager",
   "item.rival.hammer": "Hammer",
   "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
@@ -6,6 +7,7 @@
   "entity.rival.hog_rider": "Hog Rider",
   "advancements.hog_rider_advancment.title": "Hog Rideeeeer!",
   "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
+  "subtitles.hogriderdeath": "Hog Rider is dead",
   "advancements.hog_rider_advancment.descr": "Obtain a hammer!",
   "item_group.rival.mobs": "Mobs",
   "item_group.rival.tools": "Tools",
@@ -13,6 +15,7 @@
   "entity.rival.sword_pillager_diamond_sword": "Sword Pillager",
   "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
   "item.rival.hog_rider_spawn_egg": "Hog Rider Spawn Egg",
+  "subtitles.hogriderliving": "Hog Rider is roaming",
   "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
   "entity.rival.royal_guards": "Royal Guards",
   "item.rival.bad_villager_spawn_egg": "Bad Villager Spawn Egg",

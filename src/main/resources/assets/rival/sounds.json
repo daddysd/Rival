@@ -1,0 +1,29 @@
+{
+  "hogriderdeath": {
+    "subtitle": "subtitles.hogriderdeath",
+    "sounds": [
+      {
+        "name": "rival:hogriderdeathogg",
+        "stream": false
+      }
+    ]
+  },
+  "hogriderliving": {
+    "subtitle": "subtitles.hogriderliving",
+    "sounds": [
+      {
+        "name": "rival:hogriderliving",
+        "stream": false
+      }
+    ]
+  },
+  "hogriderhurts": {
+    "subtitle": "subtitles.hogriderhurts",
+    "sounds": [
+      {
+        "name": "rival:hogriderhurts",
+        "stream": false
+      }
+    ]
+  }
+}

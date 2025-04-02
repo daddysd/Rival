@@ -92,13 +92,13 @@
       "value": ""
     },
     "livingSound": {
-      "value": "entity.pillager.ambient"
+      "value": "CUSTOM:hogriderliving"
     },
     "hurtSound": {
-      "value": "entity.pillager.hurt"
+      "value": "CUSTOM:hogriderhurts"
     },
     "deathSound": {
-      "value": "entity.pillager.death"
+      "value": "CUSTOM:hogriderdeath"
     },
     "stepSound": {
       "value": ""
