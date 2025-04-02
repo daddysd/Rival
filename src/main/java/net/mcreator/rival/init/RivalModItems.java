@@ -29,6 +29,10 @@ public class RivalModItems {
 	public static final RegistryObject<Item> HAMMER = REGISTRY.register("hammer", () -> new HammerItem());
 	public static final RegistryObject<Item> SWORD_PILLAGER_DIAMOND_SWORD_SPAWN_EGG = REGISTRY.register("sword_pillager_diamond_sword_spawn_egg",
 			() -> new ForgeSpawnEggItem(RivalModEntities.SWORD_PILLAGER_DIAMOND_SWORD, -11719630, -13408513, new Item.Properties()));
+	public static final RegistryObject<Item> DAYICI_BABA_SPAWN_EGG = REGISTRY.register("dayici_baba_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DAYICI_BABA_PHASE_2_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_2_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_2, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DAYICI_BABA_PHASE_3_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_3_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_3, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DAYICI_BABA_PHASE_4_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_4_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_4, -1, -1, new Item.Properties()));
 	// Start of user code block custom items
 	// End of user code block custom items
 }

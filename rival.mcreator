@@ -36,12 +36,12 @@
       "registry_name": "mage_pillager",
       "metadata": {
         "files": [
-          "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java",
           "src/main/java/net/mcreator/rival/entity/MagePillagerEntity.java",
-          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java",
           "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json",
+          "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/MagePillagerEntityProjectile.java",
-          "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java"
+          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java"
         ]
       },
       "path": "~/Entities/Heavy Entities"
@@ -105,11 +105,11 @@
       "registry_name": "summoner_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/SummonerPillagerEntity.java",
-          "src/main/java/net/mcreator/rival/client/renderer/SummonerPillagerRenderer.java",
           "src/main/resources/assets/rival/models/item/summoner_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/SummonerPillagerRenderer.java",
+          "src/main/resources/data/rival/forge/biome_modifier/summoner_pillager_biome_modifier.json",
           "src/main/java/net/mcreator/rival/entity/model/SummonerPillagerModel.java",
-          "src/main/resources/data/rival/forge/biome_modifier/summoner_pillager_biome_modifier.json"
+          "src/main/java/net/mcreator/rival/entity/SummonerPillagerEntity.java"
         ]
       },
       "path": "~/Entities/Heavy Entities"
@@ -373,6 +373,194 @@
         ]
       },
       "path": "~/Entities/Normal Entities"
+    },
+    {
+      "name": "DayiciBaba",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/entity/DayiciBabaEntity.java",
+          "src/main/java/net/mcreator/rival/entity/model/DayiciBabaModel.java",
+          "src/main/java/net/mcreator/rival/client/renderer/DayiciBabaRenderer.java",
+          "src/main/resources/assets/rival/models/item/dayici_baba_spawn_egg.json"
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciBabaEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase2",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/rival/models/item/dayici_baba_phase_2_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/DayiciBabaPhase2Entity.java",
+          "src/main/java/net/mcreator/rival/entity/model/DayiciBabaPhase2Model.java",
+          "src/main/java/net/mcreator/rival/client/renderer/DayiciBabaPhase2Renderer.java"
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase3",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/entity/DayiciBabaPhase3Entity.java",
+          "src/main/java/net/mcreator/rival/entity/model/DayiciBabaPhase3Model.java",
+          "src/main/java/net/mcreator/rival/client/renderer/DayiciBabaPhase3Renderer.java",
+          "src/main/resources/assets/rival/models/item/dayici_baba_phase_3_spawn_egg.json"
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase4",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_4",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/entity/DayiciBabaPhase4Entity.java",
+          "src/main/resources/assets/rival/models/item/dayici_baba_phase_4_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/client/renderer/DayiciBabaPhase4Renderer.java",
+          "src/main/java/net/mcreator/rival/entity/model/DayiciBabaPhase4Model.java"
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase4EntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_4_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciBabaPhase4EntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase3EntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_3_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciBabaPhase3EntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciBabaPhase2EntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_baba_phase_2_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciBabaPhase2EntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
     }
   ],
   "variable_elements": [],
@@ -413,6 +601,7 @@
       "subtitles.hogriderhurts": "Hog Rider damaged",
       "entity.rival.mage_pillager": "Mage Pillager",
       "item.rival.hammer": "Hammer",
+      "item.rival.dayici_baba_phase_4_spawn_egg": "Dayici Baba Spawn Egg",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
       "entity.rival.hog_rider": "Hog Rider",
@@ -420,9 +609,13 @@
       "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
       "subtitles.hogriderdeath": "Hog Rider is dead",
       "advancements.hog_rider_advancment.descr": "Obtain a hammer!",
+      "item.rival.dayici_baba_phase_2_spawn_egg": "Dayici Baba Spawn Egg",
       "item_group.rival.mobs": "Mobs",
       "item_group.rival.tools": "Tools",
+      "entity.rival.dayici_baba_phase_4": "Dayici Baba",
+      "entity.rival.dayici_baba_phase_3": "Dayici Baba",
       "entity.rival.miner_pillager": "Crossbow Pillager",
+      "entity.rival.dayici_baba_phase_2": "Dayici Baba",
       "entity.rival.sword_pillager_diamond_sword": "Sword Pillager",
       "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.hog_rider_spawn_egg": "Hog Rider Spawn Egg",
@@ -431,8 +624,11 @@
       "entity.rival.royal_guards": "Royal Guards",
       "item.rival.bad_villager_spawn_egg": "Bad Villager Spawn Egg",
       "item.rival.sword_pillager_diamond_sword_spawn_egg": "Sword Pillager Spawn Egg",
+      "item.rival.dayici_baba_spawn_egg": "Dayici Baba Spawn Egg",
+      "item.rival.dayici_baba_phase_3_spawn_egg": "Dayici Baba Spawn Egg",
       "entity.rival.summoner_pillager": "Summoner Pillager",
       "item.rival.royal_guards_spawn_egg": "Royal Guards Spawn Egg",
+      "entity.rival.dayici_baba": "Dayici Baba",
       "entity.rival.sword_pillager": "Sword Pillager",
       "biome.rival.pen_island": "Pen Island",
       "entity.rival.witch": "Witch Pillager",

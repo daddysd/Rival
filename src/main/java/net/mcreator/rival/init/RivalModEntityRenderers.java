@@ -20,6 +20,10 @@ import net.mcreator.rival.client.renderer.RoyalGuardsRenderer;
 import net.mcreator.rival.client.renderer.MinerPillagerRenderer;
 import net.mcreator.rival.client.renderer.MagePillagerRenderer;
 import net.mcreator.rival.client.renderer.HogRiderRenderer;
+import net.mcreator.rival.client.renderer.DayiciBabaRenderer;
+import net.mcreator.rival.client.renderer.DayiciBabaPhase4Renderer;
+import net.mcreator.rival.client.renderer.DayiciBabaPhase3Renderer;
+import net.mcreator.rival.client.renderer.DayiciBabaPhase2Renderer;
 import net.mcreator.rival.client.renderer.BadVillagerRenderer;
 import net.mcreator.rival.client.renderer.AxePillagerRenderer;
 
@@ -39,5 +43,9 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.BAD_VILLAGER.get(), BadVillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.HOG_RIDER.get(), HogRiderRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SWORD_PILLAGER_DIAMOND_SWORD.get(), SwordPillagerDiamondSwordRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA.get(), DayiciBabaRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_2.get(), DayiciBabaPhase2Renderer::new);
+		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_3.get(), DayiciBabaPhase3Renderer::new);
+		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_4.get(), DayiciBabaPhase4Renderer::new);
 	}
 }

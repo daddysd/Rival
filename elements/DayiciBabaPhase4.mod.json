@@ -2,9 +2,9 @@
   "_fv": 73,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Mage Pillager",
+    "mobName": "Dayici Baba",
     "mobLabel": "",
-    "mobModelTexture": "pillagerwitch.png",
+    "mobModelTexture": "truck.png",
     "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.0
@@ -20,11 +20,11 @@
     "stepHeight": 0.6,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -11719630,
+      "value": -1,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -10027162,
+      "value": -1,
       "falpha": 0.0
     },
     "creativeTabs": [
@@ -55,21 +55,21 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "ILLAGER",
-    "attackStrength": 20,
+    "attackStrength": 3,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 15,
+    "health": 10,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 45,
+    "deathTime": 20,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
@@ -92,13 +92,13 @@
       "value": ""
     },
     "livingSound": {
-      "value": "entity.pillager.ambient"
+      "value": ""
     },
     "hurtSound": {
-      "value": "entity.pillager.hurt"
+      "value": "entity.generic.hurt"
     },
     "deathSound": {
-      "value": "entity.pillager.death"
+      "value": "entity.generic.death"
     },
     "stepSound": {
       "value": ""
@@ -107,17 +107,17 @@
       "value": ""
     },
     "whenMobDies": {
-      "name": "MagePillagerEntityDies"
+      "name": "DayiciBabaPhase4EntityDies"
     },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"></xml>",
-    "model": "witchpillager.geo.json",
+    "model": "truck.geo.json",
     "groupName": "",
     "animation1": "idle",
     "animation2": "walk",
-    "animation3": "death",
-    "animation4": "attack",
+    "animation3": "",
+    "animation4": "",
     "animation5": "",
     "animation6": "",
     "animation7": "",
@@ -125,8 +125,8 @@
     "animation9": "",
     "animation10": "",
     "enable2": true,
-    "enable3": true,
-    "enable4": true,
+    "enable3": false,
+    "enable4": false,
     "enable5": false,
     "enable6": false,
     "enable7": false,
@@ -135,13 +135,13 @@
     "enable10": false,
     "breedable": false,
     "tameable": false,
-    "disableDeathRotation": true,
+    "disableDeathRotation": false,
     "headMovement": false,
     "eyeHeight": false,
     "breedTriggerItems": [],
-    "ranged": true,
+    "ranged": false,
     "rangedAttackItem": {
-      "value": "Blocks.PACKED_ICE"
+      "value": ""
     },
     "rangedItemType": "Default item",
     "rangedAttackInterval": 20,
@@ -157,17 +157,13 @@
       4,
       2
     ],
-    "spawnThisMob": true,
+    "spawnThisMob": false,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,
     "maxNumberOfMobsPerGroup": 4,
-    "restrictionBiomes": [
-      {
-        "value": "CUSTOM:PenIsland"
-      }
-    ],
+    "restrictionBiomes": [],
     "spawnInDungeons": false
   }
 }
