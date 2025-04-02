@@ -7,7 +7,6 @@ package net.mcreator.rival.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
@@ -18,7 +17,7 @@ import net.mcreator.rival.RivalMod;
 public class RivalModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, RivalMod.MODID);
 	public static final RegistryObject<CreativeModeTab> MOBS = REGISTRY.register("mobs",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.rival.mobs")).icon(() -> new ItemStack(Items.CROSSBOW)).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.rival.mobs")).icon(() -> new ItemStack(RivalModItems.HAMMER.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(RivalModItems.SWORD_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.MAGE_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.SPEAR_PILLAGER_SPAWN_EGG.get());

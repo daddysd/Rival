@@ -4,7 +4,7 @@
   "definition": {
     "name": "Mobs",
     "icon": {
-      "value": "Items.CROSSBOW"
+      "value": "CUSTOM:Hammer"
     },
     "showSearch": false
   }

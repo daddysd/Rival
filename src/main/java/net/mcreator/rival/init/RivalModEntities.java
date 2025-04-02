@@ -35,7 +35,7 @@ public class RivalModEntities {
 	public static final RegistryObject<EntityType<SwordPillagerEntity>> SWORD_PILLAGER = register("sword_pillager",
 			EntityType.Builder.<SwordPillagerEntity>of(SwordPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SwordPillagerEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1f, 1.8f));
 	public static final RegistryObject<EntityType<MagePillagerEntity>> MAGE_PILLAGER = register("mage_pillager",
 			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
 
@@ -59,7 +59,7 @@ public class RivalModEntities {
 	public static final RegistryObject<EntityType<WitchEntity>> WITCH = register("witch",
 			EntityType.Builder.<WitchEntity>of(WitchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WitchEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1f, 2f));
 	public static final RegistryObject<EntityType<RoyalGuardsEntity>> ROYAL_GUARDS = register("royal_guards",
 			EntityType.Builder.<RoyalGuardsEntity>of(RoyalGuardsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RoyalGuardsEntity::new)
 
@@ -76,7 +76,7 @@ public class RivalModEntities {
 			EntityType.Builder.<SwordPillagerDiamondSwordEntity>of(SwordPillagerDiamondSwordEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(SwordPillagerDiamondSwordEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(1f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

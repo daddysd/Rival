@@ -9,12 +9,12 @@ import net.mcreator.rival.entity.WitchEntity;
 public class WitchModel extends GeoModel<WitchEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(WitchEntity entity) {
-		return new ResourceLocation("rival", "animations/truck.animation.json");
+		return new ResourceLocation("rival", "animations/witchpillager.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(WitchEntity entity) {
-		return new ResourceLocation("rival", "geo/truck.geo.json");
+		return new ResourceLocation("rival", "geo/witchpillager.geo.json");
 	}
 
 	@Override
