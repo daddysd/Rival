@@ -2,7 +2,7 @@
   "type": "forge:add_spawns",
   "biomes": "rival:pen_island",
   "spawners": {
-    "type": "rival:sword_pillager",
+    "type": "rival:sword_pillager_diamond_sword",
     "weight": 20,
     "minCount": 4,
     "maxCount": 4

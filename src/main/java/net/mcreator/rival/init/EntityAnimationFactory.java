@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.rival.entity.WitchEntity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
+import net.mcreator.rival.entity.SwordPillagerDiamondSwordEntity;
 import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
 import net.mcreator.rival.entity.RoyalGuardsEntity;
@@ -84,6 +85,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof HogRiderEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SwordPillagerDiamondSwordEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

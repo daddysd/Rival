@@ -9,25 +9,25 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcreator.rival.entity.model.SummonerPillagerModel;
-import net.mcreator.rival.entity.SummonerPillagerEntity;
+import net.mcreator.rival.entity.model.SwordPillagerDiamondSwordModel;
+import net.mcreator.rival.entity.SwordPillagerDiamondSwordEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class SummonerPillagerRenderer extends GeoEntityRenderer<SummonerPillagerEntity> {
-	public SummonerPillagerRenderer(EntityRendererProvider.Context renderManager) {
-		super(renderManager, new SummonerPillagerModel());
+public class SwordPillagerDiamondSwordRenderer extends GeoEntityRenderer<SwordPillagerDiamondSwordEntity> {
+	public SwordPillagerDiamondSwordRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new SwordPillagerDiamondSwordModel());
 		this.shadowRadius = 0.5f;
 	}
 
 	@Override
-	public RenderType getRenderType(SummonerPillagerEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+	public RenderType getRenderType(SwordPillagerDiamondSwordEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 
 	@Override
-	public void preRender(PoseStack poseStack, SummonerPillagerEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red,
+	public void preRender(PoseStack poseStack, SwordPillagerDiamondSwordEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red,
 			float green, float blue, float alpha) {
 		float scale = 1f;
 		this.scaleHeight = scale;
@@ -36,7 +36,7 @@ public class SummonerPillagerRenderer extends GeoEntityRenderer<SummonerPillager
 	}
 
 	@Override
-	protected float getDeathMaxRotation(SummonerPillagerEntity entityLivingBaseIn) {
+	protected float getDeathMaxRotation(SwordPillagerDiamondSwordEntity entityLivingBaseIn) {
 		return 0.0F;
 	}
 }

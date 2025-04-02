@@ -9,10 +9,10 @@
       "metadata": {
         "files": [
           "src/main/resources/data/rival/forge/biome_modifier/sword_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/entity/SwordPillagerEntity.java",
-          "src/main/resources/assets/rival/models/item/sword_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/model/SwordPillagerModel.java",
-          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerRenderer.java"
+          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerRenderer.java",
+          "src/main/java/net/mcreator/rival/entity/SwordPillagerEntity.java",
+          "src/main/resources/assets/rival/models/item/sword_pillager_spawn_egg.json"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -36,11 +36,11 @@
       "registry_name": "mage_pillager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java",
-          "src/main/java/net/mcreator/rival/entity/MagePillagerEntity.java",
-          "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json",
           "src/main/resources/assets/rival/models/item/mage_pillager_spawn_egg.json",
-          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java"
+          "src/main/java/net/mcreator/rival/entity/MagePillagerEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/MagePillagerRenderer.java",
+          "src/main/resources/data/rival/forge/biome_modifier/mage_pillager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/model/MagePillagerModel.java"
         ]
       },
       "path": "~/Entities/Heavy Entities"
@@ -53,11 +53,11 @@
       "registry_name": "spear_pillager",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/rival/entity/model/SpearPillagerModel.java",
           "src/main/resources/data/rival/forge/biome_modifier/spear_pillager_biome_modifier.json",
           "src/main/resources/assets/rival/models/item/spear_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/SpearPillagerEntity.java",
-          "src/main/java/net/mcreator/rival/client/renderer/SpearPillagerRenderer.java",
-          "src/main/java/net/mcreator/rival/entity/model/SpearPillagerModel.java"
+          "src/main/java/net/mcreator/rival/client/renderer/SpearPillagerRenderer.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -70,9 +70,9 @@
       "registry_name": "axe_pillager",
       "metadata": {
         "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/axe_pillager_biome_modifier.json",
           "src/main/java/net/mcreator/rival/entity/AxePillagerEntity.java",
           "src/main/java/net/mcreator/rival/client/renderer/AxePillagerRenderer.java",
-          "src/main/resources/data/rival/forge/biome_modifier/axe_pillager_biome_modifier.json",
           "src/main/resources/assets/rival/models/item/axe_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/model/AxePillagerModel.java"
         ]
@@ -87,11 +87,11 @@
       "registry_name": "miner_pillager",
       "metadata": {
         "files": [
-          "src/main/resources/assets/rival/models/item/miner_pillager_spawn_egg.json",
-          "src/main/java/net/mcreator/rival/client/renderer/MinerPillagerRenderer.java",
           "src/main/java/net/mcreator/rival/entity/MinerPillagerEntity.java",
+          "src/main/java/net/mcreator/rival/entity/model/MinerPillagerModel.java",
+          "src/main/resources/assets/rival/models/item/miner_pillager_spawn_egg.json",
           "src/main/resources/data/rival/forge/biome_modifier/miner_pillager_biome_modifier.json",
-          "src/main/java/net/mcreator/rival/entity/model/MinerPillagerModel.java"
+          "src/main/java/net/mcreator/rival/client/renderer/MinerPillagerRenderer.java"
         ]
       },
       "path": "~/Entities/Normal Entities"
@@ -104,11 +104,11 @@
       "registry_name": "summoner_pillager",
       "metadata": {
         "files": [
-          "src/main/resources/assets/rival/models/item/summoner_pillager_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/SummonerPillagerEntity.java",
           "src/main/java/net/mcreator/rival/client/renderer/SummonerPillagerRenderer.java",
-          "src/main/resources/data/rival/forge/biome_modifier/summoner_pillager_biome_modifier.json",
+          "src/main/resources/assets/rival/models/item/summoner_pillager_spawn_egg.json",
           "src/main/java/net/mcreator/rival/entity/model/SummonerPillagerModel.java",
-          "src/main/java/net/mcreator/rival/entity/SummonerPillagerEntity.java"
+          "src/main/resources/data/rival/forge/biome_modifier/summoner_pillager_biome_modifier.json"
         ]
       },
       "path": "~/Entities/Heavy Entities"
@@ -169,10 +169,10 @@
       "registry_name": "royal_guards",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/RoyalGuardsEntity.java",
-          "src/main/java/net/mcreator/rival/entity/model/RoyalGuardsModel.java",
-          "src/main/java/net/mcreator/rival/client/renderer/RoyalGuardsRenderer.java",
           "src/main/resources/data/rival/forge/biome_modifier/royal_guards_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/RoyalGuardsEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/RoyalGuardsRenderer.java",
+          "src/main/java/net/mcreator/rival/entity/model/RoyalGuardsModel.java",
           "src/main/resources/assets/rival/models/item/royal_guards_spawn_egg.json"
         ]
       },
@@ -186,10 +186,10 @@
       "registry_name": "bad_villager",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/rival/entity/BadVillagerEntity.java",
-          "src/main/resources/data/rival/forge/biome_modifier/bad_villager_biome_modifier.json",
           "src/main/java/net/mcreator/rival/client/renderer/BadVillagerRenderer.java",
           "src/main/resources/assets/rival/models/item/bad_villager_spawn_egg.json",
+          "src/main/resources/data/rival/forge/biome_modifier/bad_villager_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/BadVillagerEntity.java",
           "src/main/java/net/mcreator/rival/entity/model/BadVillagerModel.java"
         ]
       },
@@ -282,6 +282,23 @@
         ]
       },
       "path": "~/Entities/Heavy Entities"
+    },
+    {
+      "name": "SwordPillagerDiamondSword",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_pillager_diamond_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/forge/biome_modifier/sword_pillager_diamond_sword_biome_modifier.json",
+          "src/main/java/net/mcreator/rival/entity/model/SwordPillagerDiamondSwordModel.java",
+          "src/main/java/net/mcreator/rival/entity/SwordPillagerDiamondSwordEntity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/SwordPillagerDiamondSwordRenderer.java",
+          "src/main/resources/assets/rival/models/item/sword_pillager_diamond_sword_spawn_egg.json"
+        ]
+      },
+      "path": "~/Entities/Normal Entities"
     }
   ],
   "variable_elements": [],
@@ -294,8 +311,8 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "item.rival.hammer": "Hammer",
       "entity.rival.mage_pillager": "Mage Pillager",
+      "item.rival.hammer": "Hammer",
       "item.rival.spear_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.axe_pillager_spawn_egg": "Axe Pillager Spawn Egg",
       "entity.rival.hog_rider": "Hog Rider",
@@ -303,11 +320,13 @@
       "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
       "advancements.hog_rider_advancment.descr": "Obtain a hammer!",
       "entity.rival.miner_pillager": "Crossbow Pillager",
+      "entity.rival.sword_pillager_diamond_sword": "Sword Pillager",
       "item.rival.miner_pillager_spawn_egg": "Crossbow Pillager Spawn Egg",
       "item.rival.hog_rider_spawn_egg": "Hog Rider Spawn Egg",
       "item.rival.mage_pillager_spawn_egg": "Mage Pillager Spawn Egg",
       "entity.rival.royal_guards": "Royal Guards",
       "item.rival.bad_villager_spawn_egg": "Bad Villager Spawn Egg",
+      "item.rival.sword_pillager_diamond_sword_spawn_egg": "Sword Pillager Spawn Egg",
       "entity.rival.summoner_pillager": "Summoner Pillager",
       "item.rival.royal_guards_spawn_egg": "Royal Guards Spawn Egg",
       "entity.rival.sword_pillager": "Sword Pillager",

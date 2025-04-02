@@ -18,6 +18,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.rival.entity.WitchEntity;
 import net.mcreator.rival.entity.SwordPillagerEntity;
+import net.mcreator.rival.entity.SwordPillagerDiamondSwordEntity;
 import net.mcreator.rival.entity.SummonerPillagerEntity;
 import net.mcreator.rival.entity.SpearPillagerEntity;
 import net.mcreator.rival.entity.RoyalGuardsEntity;
@@ -71,6 +72,11 @@ public class RivalModEntities {
 			EntityType.Builder.<HogRiderEntity>of(HogRiderEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HogRiderEntity::new)
 
 					.sized(1f, 2.5f));
+	public static final RegistryObject<EntityType<SwordPillagerDiamondSwordEntity>> SWORD_PILLAGER_DIAMOND_SWORD = register("sword_pillager_diamond_sword",
+			EntityType.Builder.<SwordPillagerDiamondSwordEntity>of(SwordPillagerDiamondSwordEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(SwordPillagerDiamondSwordEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -91,6 +97,7 @@ public class RivalModEntities {
 			RoyalGuardsEntity.init();
 			BadVillagerEntity.init();
 			HogRiderEntity.init();
+			SwordPillagerDiamondSwordEntity.init();
 		});
 	}
 
@@ -106,5 +113,6 @@ public class RivalModEntities {
 		event.put(ROYAL_GUARDS.get(), RoyalGuardsEntity.createAttributes().build());
 		event.put(BAD_VILLAGER.get(), BadVillagerEntity.createAttributes().build());
 		event.put(HOG_RIDER.get(), HogRiderEntity.createAttributes().build());
+		event.put(SWORD_PILLAGER_DIAMOND_SWORD.get(), SwordPillagerDiamondSwordEntity.createAttributes().build());
 	}
 }

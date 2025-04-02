@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.rival.client.renderer.WitchRenderer;
 import net.mcreator.rival.client.renderer.SwordPillagerRenderer;
+import net.mcreator.rival.client.renderer.SwordPillagerDiamondSwordRenderer;
 import net.mcreator.rival.client.renderer.SummonerPillagerRenderer;
 import net.mcreator.rival.client.renderer.SpearPillagerRenderer;
 import net.mcreator.rival.client.renderer.RoyalGuardsRenderer;
@@ -34,5 +35,6 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.ROYAL_GUARDS.get(), RoyalGuardsRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.BAD_VILLAGER.get(), BadVillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.HOG_RIDER.get(), HogRiderRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.SWORD_PILLAGER_DIAMOND_SWORD.get(), SwordPillagerDiamondSwordRenderer::new);
 	}
 }
