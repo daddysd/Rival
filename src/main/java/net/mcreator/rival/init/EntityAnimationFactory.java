@@ -18,7 +18,6 @@ import net.mcreator.rival.entity.DayiciBabaPhase3Entity;
 import net.mcreator.rival.entity.DayiciBabaPhase2Entity;
 import net.mcreator.rival.entity.DayiciBabaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
-import net.mcreator.rival.entity.AxePillagerEntity;
 
 @Mod.EventBusSubscriber
 public class EntityAnimationFactory {
@@ -32,21 +31,7 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof MagePillagerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof SpearPillagerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof AxePillagerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
@@ -124,6 +109,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof DayiciBabaPhase4Entity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof MagePillagerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

@@ -9,12 +9,12 @@ import net.mcreator.rival.entity.SummonerPillagerEntity;
 public class SummonerPillagerModel extends GeoModel<SummonerPillagerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(SummonerPillagerEntity entity) {
-		return new ResourceLocation("rival", "animations/truck.animation.json");
+		return new ResourceLocation("rival", "animations/summoner.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(SummonerPillagerEntity entity) {
-		return new ResourceLocation("rival", "geo/truck.geo.json");
+		return new ResourceLocation("rival", "geo/summoner.geo.json");
 	}
 
 	@Override

@@ -19,9 +19,7 @@ public class RivalModTabs {
 	public static final RegistryObject<CreativeModeTab> MOBS = REGISTRY.register("mobs",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.rival.mobs")).icon(() -> new ItemStack(RivalModItems.HAMMER.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(RivalModItems.SWORD_PILLAGER_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.MAGE_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.SPEAR_PILLAGER_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.AXE_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.MINER_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.SUMMONER_PILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.WITCH_SPAWN_EGG.get());
@@ -30,12 +28,11 @@ public class RivalModTabs {
 				tabData.accept(RivalModItems.HOG_RIDER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.SWORD_PILLAGER_DIAMOND_SWORD_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.DAYICI_BABA_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.DAYICI_BABA_PHASE_2_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.DAYICI_BABA_PHASE_3_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.DAYICI_BABA_PHASE_4_SPAWN_EGG.get());
+				tabData.accept(RivalModItems.MAGE_PILLAGER_SPAWN_EGG.get());
 			}).build());
 	public static final RegistryObject<CreativeModeTab> TOOLS = REGISTRY.register("tools",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.rival.tools")).icon(() -> new ItemStack(RivalModItems.HAMMER.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(RivalModItems.HAMMER.get());
+				tabData.accept(RivalModItems.ZULFI.get());
 			}).withTabsBefore(MOBS.getId()).build());
 }

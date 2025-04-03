@@ -25,17 +25,13 @@ import net.mcreator.rival.client.renderer.DayiciBabaPhase4Renderer;
 import net.mcreator.rival.client.renderer.DayiciBabaPhase3Renderer;
 import net.mcreator.rival.client.renderer.DayiciBabaPhase2Renderer;
 import net.mcreator.rival.client.renderer.BadVillagerRenderer;
-import net.mcreator.rival.client.renderer.AxePillagerRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RivalModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(RivalModEntities.SWORD_PILLAGER.get(), SwordPillagerRenderer::new);
-		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER.get(), MagePillagerRenderer::new);
-		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SPEAR_PILLAGER.get(), SpearPillagerRenderer::new);
-		event.registerEntityRenderer(RivalModEntities.AXE_PILLAGER.get(), AxePillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.MINER_PILLAGER.get(), MinerPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.SUMMONER_PILLAGER.get(), SummonerPillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.WITCH.get(), WitchRenderer::new);
@@ -47,5 +43,7 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_2.get(), DayiciBabaPhase2Renderer::new);
 		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_3.get(), DayiciBabaPhase3Renderer::new);
 		event.registerEntityRenderer(RivalModEntities.DAYICI_BABA_PHASE_4.get(), DayiciBabaPhase4Renderer::new);
+		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER.get(), MagePillagerRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER_PROJECTILE.get(), ThrownItemRenderer::new);
 	}
 }

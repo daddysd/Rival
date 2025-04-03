@@ -11,17 +11,16 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 
 import net.minecraft.world.item.Item;
 
+import net.mcreator.rival.item.ZulfiItem;
 import net.mcreator.rival.item.HammerItem;
 import net.mcreator.rival.RivalMod;
 
 public class RivalModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, RivalMod.MODID);
 	public static final RegistryObject<Item> SWORD_PILLAGER_SPAWN_EGG = REGISTRY.register("sword_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.SWORD_PILLAGER, -11719630, -3355444, new Item.Properties()));
-	public static final RegistryObject<Item> MAGE_PILLAGER_SPAWN_EGG = REGISTRY.register("mage_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.MAGE_PILLAGER, -11719630, -10027162, new Item.Properties()));
 	public static final RegistryObject<Item> SPEAR_PILLAGER_SPAWN_EGG = REGISTRY.register("spear_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.SPEAR_PILLAGER, -11719630, -1, new Item.Properties()));
-	public static final RegistryObject<Item> AXE_PILLAGER_SPAWN_EGG = REGISTRY.register("axe_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.AXE_PILLAGER, -11719630, -1, new Item.Properties()));
 	public static final RegistryObject<Item> MINER_PILLAGER_SPAWN_EGG = REGISTRY.register("miner_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.MINER_PILLAGER, -11719630, -1, new Item.Properties()));
-	public static final RegistryObject<Item> SUMMONER_PILLAGER_SPAWN_EGG = REGISTRY.register("summoner_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.SUMMONER_PILLAGER, -11719630, -16776961, new Item.Properties()));
+	public static final RegistryObject<Item> SUMMONER_PILLAGER_SPAWN_EGG = REGISTRY.register("summoner_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.SUMMONER_PILLAGER, -11719630, -16751002, new Item.Properties()));
 	public static final RegistryObject<Item> WITCH_SPAWN_EGG = REGISTRY.register("witch_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.WITCH, -11719630, -13434829, new Item.Properties()));
 	public static final RegistryObject<Item> ROYAL_GUARDS_SPAWN_EGG = REGISTRY.register("royal_guards_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.ROYAL_GUARDS, -11719630, -16776961, new Item.Properties()));
 	public static final RegistryObject<Item> BAD_VILLAGER_SPAWN_EGG = REGISTRY.register("bad_villager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.BAD_VILLAGER, -11719630, -16776961, new Item.Properties()));
@@ -33,6 +32,8 @@ public class RivalModItems {
 	public static final RegistryObject<Item> DAYICI_BABA_PHASE_2_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_2_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_2, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> DAYICI_BABA_PHASE_3_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_3_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_3, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> DAYICI_BABA_PHASE_4_SPAWN_EGG = REGISTRY.register("dayici_baba_phase_4_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_BABA_PHASE_4, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> MAGE_PILLAGER_SPAWN_EGG = REGISTRY.register("mage_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.MAGE_PILLAGER, -11719630, -13382656, new Item.Properties()));
+	public static final RegistryObject<Item> ZULFI = REGISTRY.register("zulfi", () -> new ZulfiItem());
 	// Start of user code block custom items
 	// End of user code block custom items
 }

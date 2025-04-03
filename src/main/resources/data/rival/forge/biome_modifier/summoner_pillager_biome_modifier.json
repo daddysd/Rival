@@ -1,8 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": {
-    "type": "forge:any"
-  },
+  "biomes": "rival:pen_island",
   "spawners": {
     "type": "rival:summoner_pillager",
     "weight": 20,

@@ -43,6 +43,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.rival.procedures.SummonerPillagerEntityIsHurtProcedure;
+import net.mcreator.rival.procedures.SummonerPillagerEntityDiesProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
 public class SummonerPillagerEntity extends Monster implements GeoEntity {
@@ -71,7 +72,7 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "truck");
+		this.entityData.define(TEXTURE, "main");
 	}
 
 	public void setTexture(String texture) {
@@ -124,8 +125,14 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		SummonerPillagerEntityIsHurtProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		SummonerPillagerEntityIsHurtProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		return super.hurt(source, amount);
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SummonerPillagerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
@@ -174,9 +181,30 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 			) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("walk"));
 			}
+			if (this.isDeadOrDying()) {
+				return event.setAndContinue(RawAnimation.begin().thenPlay("death"));
+			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}
 		return PlayState.STOP;
+	}
+
+	private PlayState attackingPredicate(AnimationState event) {
+		double d1 = this.getX() - this.xOld;
+		double d0 = this.getZ() - this.zOld;
+		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
+		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
+			this.swinging = true;
+			this.lastSwing = level().getGameTime();
+		}
+		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
+			this.swinging = false;
+		}
+		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+			event.getController().forceAnimationReset();
+			return event.setAndContinue(RawAnimation.begin().thenPlay("attack"));
+		}
+		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -218,6 +246,7 @@ public class SummonerPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

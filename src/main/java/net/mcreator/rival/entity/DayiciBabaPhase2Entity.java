@@ -55,6 +55,7 @@ public class DayiciBabaPhase2Entity extends Monster implements GeoEntity {
 		xpReward = 0;
 		setNoAi(false);
 		setMaxUpStep(0.6f);
+		setPersistenceRequired();
 	}
 
 	@Override
@@ -87,6 +88,11 @@ public class DayiciBabaPhase2Entity extends Monster implements GeoEntity {
 	@Override
 	public MobType getMobType() {
 		return MobType.ILLAGER;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override

@@ -31,7 +31,6 @@ import net.mcreator.rival.entity.DayiciBabaPhase3Entity;
 import net.mcreator.rival.entity.DayiciBabaPhase2Entity;
 import net.mcreator.rival.entity.DayiciBabaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
-import net.mcreator.rival.entity.AxePillagerEntity;
 import net.mcreator.rival.RivalMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -41,18 +40,8 @@ public class RivalModEntities {
 			EntityType.Builder.<SwordPillagerEntity>of(SwordPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SwordPillagerEntity::new)
 
 					.sized(1f, 1.8f));
-	public static final RegistryObject<EntityType<MagePillagerEntity>> MAGE_PILLAGER = register("mage_pillager",
-			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<MagePillagerEntityProjectile>> MAGE_PILLAGER_PROJECTILE = register("projectile_mage_pillager", EntityType.Builder.<MagePillagerEntityProjectile>of(MagePillagerEntityProjectile::new, MobCategory.MISC)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MagePillagerEntityProjectile::new).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<SpearPillagerEntity>> SPEAR_PILLAGER = register("spear_pillager",
 			EntityType.Builder.<SpearPillagerEntity>of(SpearPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpearPillagerEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<AxePillagerEntity>> AXE_PILLAGER = register("axe_pillager",
-			EntityType.Builder.<AxePillagerEntity>of(AxePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AxePillagerEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MinerPillagerEntity>> MINER_PILLAGER = register("miner_pillager",
@@ -62,7 +51,7 @@ public class RivalModEntities {
 	public static final RegistryObject<EntityType<SummonerPillagerEntity>> SUMMONER_PILLAGER = register("summoner_pillager",
 			EntityType.Builder.<SummonerPillagerEntity>of(SummonerPillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SummonerPillagerEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 2f));
 	public static final RegistryObject<EntityType<WitchEntity>> WITCH = register("witch",
 			EntityType.Builder.<WitchEntity>of(WitchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WitchEntity::new)
 
@@ -100,6 +89,12 @@ public class RivalModEntities {
 			EntityType.Builder.<DayiciBabaPhase4Entity>of(DayiciBabaPhase4Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciBabaPhase4Entity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MagePillagerEntity>> MAGE_PILLAGER = register("mage_pillager",
+			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
+
+					.sized(0.6f, 2f));
+	public static final RegistryObject<EntityType<MagePillagerEntityProjectile>> MAGE_PILLAGER_PROJECTILE = register("projectile_mage_pillager", EntityType.Builder.<MagePillagerEntityProjectile>of(MagePillagerEntityProjectile::new, MobCategory.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MagePillagerEntityProjectile::new).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -111,9 +106,7 @@ public class RivalModEntities {
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			SwordPillagerEntity.init();
-			MagePillagerEntity.init();
 			SpearPillagerEntity.init();
-			AxePillagerEntity.init();
 			MinerPillagerEntity.init();
 			SummonerPillagerEntity.init();
 			WitchEntity.init();
@@ -125,15 +118,14 @@ public class RivalModEntities {
 			DayiciBabaPhase2Entity.init();
 			DayiciBabaPhase3Entity.init();
 			DayiciBabaPhase4Entity.init();
+			MagePillagerEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(SWORD_PILLAGER.get(), SwordPillagerEntity.createAttributes().build());
-		event.put(MAGE_PILLAGER.get(), MagePillagerEntity.createAttributes().build());
 		event.put(SPEAR_PILLAGER.get(), SpearPillagerEntity.createAttributes().build());
-		event.put(AXE_PILLAGER.get(), AxePillagerEntity.createAttributes().build());
 		event.put(MINER_PILLAGER.get(), MinerPillagerEntity.createAttributes().build());
 		event.put(SUMMONER_PILLAGER.get(), SummonerPillagerEntity.createAttributes().build());
 		event.put(WITCH.get(), WitchEntity.createAttributes().build());
@@ -145,5 +137,6 @@ public class RivalModEntities {
 		event.put(DAYICI_BABA_PHASE_2.get(), DayiciBabaPhase2Entity.createAttributes().build());
 		event.put(DAYICI_BABA_PHASE_3.get(), DayiciBabaPhase3Entity.createAttributes().build());
 		event.put(DAYICI_BABA_PHASE_4.get(), DayiciBabaPhase4Entity.createAttributes().build());
+		event.put(MAGE_PILLAGER.get(), MagePillagerEntity.createAttributes().build());
 	}
 }
