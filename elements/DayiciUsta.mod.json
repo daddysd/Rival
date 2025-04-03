@@ -2,9 +2,9 @@
   "_fv": 73,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Dayici Baba",
+    "mobName": "Dayici Usta",
     "mobLabel": "",
-    "mobModelTexture": "truck.png",
+    "mobModelTexture": "image_2025_04_03t14_05_51_928z.png",
     "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.0
@@ -13,23 +13,27 @@
       "fixedValue": 1.0
     },
     "entityDataEntries": [],
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelWidth": 1.5,
+    "modelHeight": 4.0,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "stepHeight": 0.6,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -13421773,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -6710887,
       "falpha": 0.0
     },
-    "creativeTabs": [],
-    "isBoss": false,
-    "bossBarColor": "PINK",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Mobs"
+      }
+    ],
+    "isBoss": true,
+    "bossBarColor": "WHITE",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
       "value": ""
@@ -58,30 +62,30 @@
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 1000,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 20,
+    "deathTime": 15,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,
     "canControlStrafe": false,
-    "immuneToFire": false,
+    "immuneToFire": true,
     "immuneToArrows": false,
-    "immuneToFallDamage": false,
-    "immuneToCactus": false,
-    "immuneToDrowning": false,
-    "immuneToLightning": false,
+    "immuneToFallDamage": true,
+    "immuneToCactus": true,
+    "immuneToDrowning": true,
+    "immuneToLightning": true,
     "immuneToPotions": false,
     "immuneToPlayer": false,
-    "immuneToExplosion": false,
+    "immuneToExplosion": true,
     "immuneToTrident": false,
-    "immuneToAnvil": false,
+    "immuneToAnvil": true,
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
@@ -102,18 +106,18 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "whenMobDies": {
-      "name": "DayiciBabaPhase4EntityDies"
+    "onMobTickUpdate": {
+      "name": "DayiciUstaOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"></xml>",
-    "model": "truck.geo.json",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"795\" y=\"122\"><next><block type=\"attack_on_collide\"><field name=\"speed\">2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "model": "dayici11.geo.json",
     "groupName": "",
     "animation1": "idle",
     "animation2": "walk",
-    "animation3": "",
-    "animation4": "",
+    "animation3": "death",
+    "animation4": "attack1",
     "animation5": "",
     "animation6": "",
     "animation7": "",
@@ -121,8 +125,8 @@
     "animation9": "",
     "animation10": "",
     "enable2": true,
-    "enable3": false,
-    "enable4": false,
+    "enable3": true,
+    "enable4": true,
     "enable5": false,
     "enable6": false,
     "enable7": false,
@@ -131,7 +135,7 @@
     "enable10": false,
     "breedable": false,
     "tameable": false,
-    "disableDeathRotation": false,
+    "disableDeathRotation": true,
     "headMovement": false,
     "eyeHeight": false,
     "breedTriggerItems": [],

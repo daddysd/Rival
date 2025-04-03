@@ -26,10 +26,7 @@ import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntityProjectile;
 import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.HogRiderEntity;
-import net.mcreator.rival.entity.DayiciBabaPhase4Entity;
-import net.mcreator.rival.entity.DayiciBabaPhase3Entity;
-import net.mcreator.rival.entity.DayiciBabaPhase2Entity;
-import net.mcreator.rival.entity.DayiciBabaEntity;
+import net.mcreator.rival.entity.DayiciUstaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
 import net.mcreator.rival.RivalMod;
 
@@ -73,28 +70,14 @@ public class RivalModEntities {
 					.setCustomClientFactory(SwordPillagerDiamondSwordEntity::new)
 
 					.sized(1f, 1.8f));
-	public static final RegistryObject<EntityType<DayiciBabaEntity>> DAYICI_BABA = register("dayici_baba",
-			EntityType.Builder.<DayiciBabaEntity>of(DayiciBabaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciBabaEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<DayiciBabaPhase2Entity>> DAYICI_BABA_PHASE_2 = register("dayici_baba_phase_2",
-			EntityType.Builder.<DayiciBabaPhase2Entity>of(DayiciBabaPhase2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciBabaPhase2Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<DayiciBabaPhase3Entity>> DAYICI_BABA_PHASE_3 = register("dayici_baba_phase_3",
-			EntityType.Builder.<DayiciBabaPhase3Entity>of(DayiciBabaPhase3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciBabaPhase3Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<DayiciBabaPhase4Entity>> DAYICI_BABA_PHASE_4 = register("dayici_baba_phase_4",
-			EntityType.Builder.<DayiciBabaPhase4Entity>of(DayiciBabaPhase4Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciBabaPhase4Entity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MagePillagerEntity>> MAGE_PILLAGER = register("mage_pillager",
 			EntityType.Builder.<MagePillagerEntity>of(MagePillagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MagePillagerEntity::new)
 
 					.sized(0.6f, 2f));
 	public static final RegistryObject<EntityType<MagePillagerEntityProjectile>> MAGE_PILLAGER_PROJECTILE = register("projectile_mage_pillager", EntityType.Builder.<MagePillagerEntityProjectile>of(MagePillagerEntityProjectile::new, MobCategory.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MagePillagerEntityProjectile::new).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<DayiciUstaEntity>> DAYICI_USTA = register("dayici_usta", EntityType.Builder.<DayiciUstaEntity>of(DayiciUstaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+			.setUpdateInterval(3).setCustomClientFactory(DayiciUstaEntity::new).fireImmune().sized(1.5f, 4f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -114,11 +97,8 @@ public class RivalModEntities {
 			BadVillagerEntity.init();
 			HogRiderEntity.init();
 			SwordPillagerDiamondSwordEntity.init();
-			DayiciBabaEntity.init();
-			DayiciBabaPhase2Entity.init();
-			DayiciBabaPhase3Entity.init();
-			DayiciBabaPhase4Entity.init();
 			MagePillagerEntity.init();
+			DayiciUstaEntity.init();
 		});
 	}
 
@@ -133,10 +113,7 @@ public class RivalModEntities {
 		event.put(BAD_VILLAGER.get(), BadVillagerEntity.createAttributes().build());
 		event.put(HOG_RIDER.get(), HogRiderEntity.createAttributes().build());
 		event.put(SWORD_PILLAGER_DIAMOND_SWORD.get(), SwordPillagerDiamondSwordEntity.createAttributes().build());
-		event.put(DAYICI_BABA.get(), DayiciBabaEntity.createAttributes().build());
-		event.put(DAYICI_BABA_PHASE_2.get(), DayiciBabaPhase2Entity.createAttributes().build());
-		event.put(DAYICI_BABA_PHASE_3.get(), DayiciBabaPhase3Entity.createAttributes().build());
-		event.put(DAYICI_BABA_PHASE_4.get(), DayiciBabaPhase4Entity.createAttributes().build());
 		event.put(MAGE_PILLAGER.get(), MagePillagerEntity.createAttributes().build());
+		event.put(DAYICI_USTA.get(), DayiciUstaEntity.createAttributes().build());
 	}
 }

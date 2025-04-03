@@ -16,12 +16,15 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.entity.raid.Raid;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -33,6 +36,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -44,7 +48,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.rival.init.RivalModEntities;
 
-public class SpearPillagerEntity extends Monster implements GeoEntity {
+public class SpearPillagerEntity extends Raider implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SpearPillagerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SpearPillagerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SpearPillagerEntity.class, EntityDataSerializers.STRING);
@@ -70,7 +74,7 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "truck");
+		this.entityData.define(TEXTURE, "spearpil");
 	}
 
 	public void setTexture(String texture) {
@@ -95,10 +99,10 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.8));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
 
 	@Override
@@ -119,6 +123,11 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pillager.death"));
+	}
+
+	@Override
+	public SoundEvent getCelebrateSound() {
+		return SoundEvents.EMPTY;
 	}
 
 	@Override
@@ -145,9 +154,20 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
+	}
+
 	public static void init() {
 		SpawnPlacements.register(RivalModEntities.SPEAR_PILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		Raid.RaiderType.create("spear_pillager", RivalModEntities.SPEAR_PILLAGER.get(), new int[]{0, 4, 3, 3, 4, 4, 4, 2});
+	}
+
+	@Override
+	public void applyRaidBuffs(int num, boolean logic) {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -168,11 +188,29 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("walk"));
 			}
 			if (this.isDeadOrDying()) {
-				return event.setAndContinue(RawAnimation.begin().thenPlay("overturned"));
+				return event.setAndContinue(RawAnimation.begin().thenPlay("death"));
 			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}
 		return PlayState.STOP;
+	}
+
+	private PlayState attackingPredicate(AnimationState event) {
+		double d1 = this.getX() - this.xOld;
+		double d0 = this.getZ() - this.zOld;
+		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
+		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
+			this.swinging = true;
+			this.lastSwing = level().getGameTime();
+		}
+		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
+			this.swinging = false;
+		}
+		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+			event.getController().forceAnimationReset();
+			return event.setAndContinue(RawAnimation.begin().thenPlay("attack"));
+		}
+		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -197,7 +235,7 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
+		if (this.deathTime == 45) {
 			this.remove(SpearPillagerEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}
@@ -214,6 +252,7 @@ public class SpearPillagerEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

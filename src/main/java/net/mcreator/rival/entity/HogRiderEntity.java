@@ -16,13 +16,17 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MoveBackToVillageGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.BreakDoorGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -35,6 +39,7 @@ import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -47,7 +52,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.rival.procedures.HogRiderEntityDiesProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
-public class HogRiderEntity extends Monster implements GeoEntity {
+public class HogRiderEntity extends Raider implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(HogRiderEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(HogRiderEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(HogRiderEntity.class, EntityDataSerializers.STRING);
@@ -101,7 +106,9 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.8));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.goalSelector.addGoal(5, new BreakDoorGoal(this, e -> true));
+		this.goalSelector.addGoal(6, new MoveBackToVillageGoal(this, 0.6, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
 
 	@Override
@@ -122,6 +129,11 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("rival:hogriderdeath"));
+	}
+
+	@Override
+	public SoundEvent getCelebrateSound() {
+		return SoundEvents.EMPTY;
 	}
 
 	@Override
@@ -161,9 +173,20 @@ public class HogRiderEntity extends Monster implements GeoEntity {
 		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
+	}
+
 	public static void init() {
 		SpawnPlacements.register(RivalModEntities.HOG_RIDER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		Raid.RaiderType.create("hog_rider", RivalModEntities.HOG_RIDER.get(), new int[]{0, 4, 3, 3, 4, 4, 4, 2});
+	}
+
+	@Override
+	public void applyRaidBuffs(int num, boolean logic) {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

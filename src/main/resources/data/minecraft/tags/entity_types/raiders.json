@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "rival:hog_rider",
+    "rival:spear_pillager",
+    "rival:sword_pillager"
+  ]
+}

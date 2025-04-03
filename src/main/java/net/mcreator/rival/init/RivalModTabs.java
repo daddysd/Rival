@@ -27,8 +27,8 @@ public class RivalModTabs {
 				tabData.accept(RivalModItems.BAD_VILLAGER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.HOG_RIDER_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.SWORD_PILLAGER_DIAMOND_SWORD_SPAWN_EGG.get());
-				tabData.accept(RivalModItems.DAYICI_BABA_SPAWN_EGG.get());
 				tabData.accept(RivalModItems.MAGE_PILLAGER_SPAWN_EGG.get());
+				tabData.accept(RivalModItems.DAYICI_USTA_SPAWN_EGG.get());
 			}).build());
 	public static final RegistryObject<CreativeModeTab> TOOLS = REGISTRY.register("tools",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.rival.tools")).icon(() -> new ItemStack(RivalModItems.HAMMER.get())).displayItems((parameters, tabData) -> {

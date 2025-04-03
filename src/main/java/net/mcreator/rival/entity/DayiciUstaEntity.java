@@ -15,16 +15,26 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -33,24 +43,25 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.rival.procedures.DayiciBabaPhase3EntityDiesProcedure;
+import net.mcreator.rival.procedures.DayiciUstaOnEntityTickUpdateProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
-public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(DayiciBabaPhase3Entity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(DayiciBabaPhase3Entity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(DayiciBabaPhase3Entity.class, EntityDataSerializers.STRING);
+public class DayiciUstaEntity extends Monster implements GeoEntity {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(DayiciUstaEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(DayiciUstaEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(DayiciUstaEntity.class, EntityDataSerializers.STRING);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
 	public String animationprocedure = "empty";
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.WHITE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
-	public DayiciBabaPhase3Entity(PlayMessages.SpawnEntity packet, Level world) {
-		this(RivalModEntities.DAYICI_BABA_PHASE_3.get(), world);
+	public DayiciUstaEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(RivalModEntities.DAYICI_USTA.get(), world);
 	}
 
-	public DayiciBabaPhase3Entity(EntityType<DayiciBabaPhase3Entity> type, Level world) {
+	public DayiciUstaEntity(EntityType<DayiciUstaEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -63,7 +74,7 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "truck");
+		this.entityData.define(TEXTURE, "image_2025_04_03t14_05_51_928z");
 	}
 
 	public void setTexture(String texture) {
@@ -82,7 +93,16 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false) {
+			@Override
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
+			}
+		});
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
 
 	@Override
@@ -106,9 +126,22 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 	}
 
 	@Override
-	public void die(DamageSource source) {
-		super.die(source);
-		DayiciBabaPhase3EntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+	public boolean hurt(DamageSource source, float amount) {
+		if (source.is(DamageTypes.IN_FIRE))
+			return false;
+		if (source.is(DamageTypes.FALL))
+			return false;
+		if (source.is(DamageTypes.CACTUS))
+			return false;
+		if (source.is(DamageTypes.DROWN))
+			return false;
+		if (source.is(DamageTypes.LIGHTNING_BOLT))
+			return false;
+		if (source.is(DamageTypes.EXPLOSION))
+			return false;
+		if (source.is(DamageTypes.FALLING_ANVIL))
+			return false;
+		return super.hurt(source, amount);
 	}
 
 	@Override
@@ -127,6 +160,7 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		DayiciUstaOnEntityTickUpdateProcedure.execute(this);
 		this.refreshDimensions();
 	}
 
@@ -135,13 +169,36 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
+	@Override
+	public boolean canChangeDimensions() {
+		return false;
+	}
+
+	@Override
+	public void startSeenByPlayer(ServerPlayer player) {
+		super.startSeenByPlayer(player);
+		this.bossInfo.addPlayer(player);
+	}
+
+	@Override
+	public void stopSeenByPlayer(ServerPlayer player) {
+		super.stopSeenByPlayer(player);
+		this.bossInfo.removePlayer(player);
+	}
+
+	@Override
+	public void customServerAiStep() {
+		super.customServerAiStep();
+		this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
+	}
+
 	public static void init() {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 1000);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
@@ -155,9 +212,30 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 			) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("walk"));
 			}
+			if (this.isDeadOrDying()) {
+				return event.setAndContinue(RawAnimation.begin().thenPlay("death"));
+			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}
 		return PlayState.STOP;
+	}
+
+	private PlayState attackingPredicate(AnimationState event) {
+		double d1 = this.getX() - this.xOld;
+		double d0 = this.getZ() - this.zOld;
+		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
+		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
+			this.swinging = true;
+			this.lastSwing = level().getGameTime();
+		}
+		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
+			this.swinging = false;
+		}
+		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+			event.getController().forceAnimationReset();
+			return event.setAndContinue(RawAnimation.begin().thenPlay("attack1"));
+		}
+		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -182,8 +260,8 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
-			this.remove(DayiciBabaPhase3Entity.RemovalReason.KILLED);
+		if (this.deathTime == 15) {
+			this.remove(DayiciUstaEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}
 	}
@@ -199,6 +277,7 @@ public class DayiciBabaPhase3Entity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

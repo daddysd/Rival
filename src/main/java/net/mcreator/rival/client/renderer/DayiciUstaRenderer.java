@@ -9,29 +9,34 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcreator.rival.entity.model.DayiciBabaModel;
-import net.mcreator.rival.entity.DayiciBabaEntity;
+import net.mcreator.rival.entity.model.DayiciUstaModel;
+import net.mcreator.rival.entity.DayiciUstaEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class DayiciBabaRenderer extends GeoEntityRenderer<DayiciBabaEntity> {
-	public DayiciBabaRenderer(EntityRendererProvider.Context renderManager) {
-		super(renderManager, new DayiciBabaModel());
+public class DayiciUstaRenderer extends GeoEntityRenderer<DayiciUstaEntity> {
+	public DayiciUstaRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new DayiciUstaModel());
 		this.shadowRadius = 0.5f;
 	}
 
 	@Override
-	public RenderType getRenderType(DayiciBabaEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+	public RenderType getRenderType(DayiciUstaEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
 		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 
 	@Override
-	public void preRender(PoseStack poseStack, DayiciBabaEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
+	public void preRender(PoseStack poseStack, DayiciUstaEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
 			float blue, float alpha) {
 		float scale = 1f;
 		this.scaleHeight = scale;
 		this.scaleWidth = scale;
 		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+
+	@Override
+	protected float getDeathMaxRotation(DayiciUstaEntity entityLivingBaseIn) {
+		return 0.0F;
 	}
 }

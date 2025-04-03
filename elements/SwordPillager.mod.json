@@ -53,7 +53,7 @@
     "equipmentBoots": {
       "value": ""
     },
-    "mobBehaviourType": "Mob",
+    "mobBehaviourType": "Raider",
     "mobCreatureType": "ILLAGER",
     "attackStrength": 10,
     "attackKnockback": 0.0,

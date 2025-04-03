@@ -13,10 +13,7 @@ import net.mcreator.rival.entity.RoyalGuardsEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.HogRiderEntity;
-import net.mcreator.rival.entity.DayiciBabaPhase4Entity;
-import net.mcreator.rival.entity.DayiciBabaPhase3Entity;
-import net.mcreator.rival.entity.DayiciBabaPhase2Entity;
-import net.mcreator.rival.entity.DayiciBabaEntity;
+import net.mcreator.rival.entity.DayiciUstaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
 
 @Mod.EventBusSubscriber
@@ -87,35 +84,14 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof DayiciBabaEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof DayiciBabaPhase2Entity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof DayiciBabaPhase3Entity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof DayiciBabaPhase4Entity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof MagePillagerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof DayiciUstaEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

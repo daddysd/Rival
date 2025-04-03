@@ -16,6 +16,8 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -34,6 +36,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -46,7 +49,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.rival.procedures.SwordPillagerEntityDiesProcedure;
 import net.mcreator.rival.init.RivalModEntities;
 
-public class SwordPillagerEntity extends Monster implements GeoEntity {
+public class SwordPillagerEntity extends Raider implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SwordPillagerEntity.class, EntityDataSerializers.STRING);
@@ -124,6 +127,11 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public SoundEvent getCelebrateSound() {
+		return SoundEvents.EMPTY;
+	}
+
+	@Override
 	public void die(DamageSource source) {
 		super.die(source);
 		SwordPillagerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
@@ -153,9 +161,20 @@ public class SwordPillagerEntity extends Monster implements GeoEntity {
 		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
+	}
+
 	public static void init() {
 		SpawnPlacements.register(RivalModEntities.SWORD_PILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		Raid.RaiderType.create("sword_pillager", RivalModEntities.SWORD_PILLAGER.get(), new int[]{0, 4, 3, 3, 4, 4, 4, 2});
+	}
+
+	@Override
+	public void applyRaidBuffs(int num, boolean logic) {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

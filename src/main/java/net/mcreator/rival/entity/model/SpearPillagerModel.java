@@ -9,12 +9,12 @@ import net.mcreator.rival.entity.SpearPillagerEntity;
 public class SpearPillagerModel extends GeoModel<SpearPillagerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(SpearPillagerEntity entity) {
-		return new ResourceLocation("rival", "animations/truck.animation.json");
+		return new ResourceLocation("rival", "animations/spearpillager.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(SpearPillagerEntity entity) {
-		return new ResourceLocation("rival", "geo/truck.geo.json");
+		return new ResourceLocation("rival", "geo/spearpillager.geo.json");
 	}
 
 	@Override
