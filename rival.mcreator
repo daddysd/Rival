@@ -487,7 +487,7 @@
     {
       "name": "DayiciUstaOnEntityTickUpdate",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "dayici_usta_on_entity_tick_update",
       "metadata": {

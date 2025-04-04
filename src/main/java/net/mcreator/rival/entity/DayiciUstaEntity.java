@@ -63,9 +63,9 @@ public class DayiciUstaEntity extends Monster implements GeoEntity {
 
 	public DayiciUstaEntity(EntityType<DayiciUstaEntity> type, Level world) {
 		super(type, world);
-		xpReward = 0;
+		xpReward = 50;
 		setNoAi(false);
-		setMaxUpStep(0.6f);
+		setMaxUpStep(1f);
 		setPersistenceRequired();
 	}
 
@@ -93,7 +93,7 @@ public class DayiciUstaEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
@@ -202,6 +202,7 @@ public class DayiciUstaEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 50);
 		return builder;
 	}
 

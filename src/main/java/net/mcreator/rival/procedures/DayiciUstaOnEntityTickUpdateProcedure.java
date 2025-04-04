@@ -73,11 +73,7 @@ public class DayiciUstaOnEntityTickUpdateProcedure {
                     
                     // We only want to trigger one threshold at a time, so break after finding one
                     break;
-
-
-                    
                 }
-                
             }
         }
     }
