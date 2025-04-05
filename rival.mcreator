@@ -502,6 +502,151 @@
         ]
       },
       "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciUstaThisEntityKillsAnotherOne",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_usta_this_entity_kills_another_one",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciUstaThisEntityKillsAnotherOneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciUstaPhase2",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_usta_phase_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/entity/DayiciUstaPhase2Entity.java",
+          "src/main/java/net/mcreator/rival/client/renderer/DayiciUstaPhase2Renderer.java",
+          "src/main/resources/assets/rival/models/item/dayici_usta_phase_2_spawn_egg.json",
+          "src/main/java/net/mcreator/rival/entity/model/DayiciUstaPhase2Model.java"
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciUstaEntityDies",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_usta_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciUstaEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "Easy1House",
+      "type": "structure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "easy_1_house",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/worldgen/structure_set/easy_1_house.json",
+          "src/main/resources/data/rival/worldgen/template_pool/easy_1_house.json",
+          "src/main/resources/data/rival/worldgen/structure/easy_1_house.json"
+        ]
+      },
+      "path": "~/Structures/Easy"
+    },
+    {
+      "name": "Easy2Tower",
+      "type": "structure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "easy_2_tower",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/rival/worldgen/structure/easy_2_tower.json",
+          "src/main/resources/data/rival/worldgen/template_pool/easy_2_tower.json",
+          "src/main/resources/data/rival/worldgen/structure_set/easy_2_tower.json"
+        ]
+      },
+      "path": "~/Structures/Easy"
+    },
+    {
+      "name": "DayiciUstaPhase2OnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "dayici_usta_phase_2_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciUstaPhase2OnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Entities/Bosses"
+    },
+    {
+      "name": "DayiciUstaPhase2ThisEntityKillsAnotherOne",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dayici_usta_phase_2_this_entity_kills_another_one",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/rival/procedures/DayiciUstaPhase2ThisEntityKillsAnotherOneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Entities/Bosses"
     }
   ],
   "variable_elements": [],
@@ -554,6 +699,7 @@
       "item.rival.sword_pillager_spawn_egg": "Sword Pillager Spawn Egg",
       "subtitles.hogriderdeath": "Hog Rider is dead",
       "advancements.hog_rider_advancment.descr": "Obtain a hammer!",
+      "entity.rival.dayici_usta_phase_2": "Dayici Usta",
       "item_group.rival.mobs": "Mobs",
       "item.rival.dayici_usta_spawn_egg": "Dayici Usta Spawn Egg",
       "item_group.rival.tools": "Tools",
@@ -572,6 +718,7 @@
       "entity.rival.sword_pillager": "Sword Pillager",
       "biome.rival.pen_island": "Pen Island",
       "entity.rival.witch": "Witch Pillager",
+      "item.rival.dayici_usta_phase_2_spawn_egg": "Dayici Usta Spawn Egg",
       "entity.rival.bad_villager": "Bad Villager",
       "item.rival.witch_spawn_egg": "Witch Pillager Spawn Egg",
       "entity.rival.spear_pillager": "Spear Pillager",

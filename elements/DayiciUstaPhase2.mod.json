@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Dayici Usta",
     "mobLabel": "",
-    "mobModelTexture": "image_2025_04_03t14_05_51_928z.png",
+    "mobModelTexture": "dayici2sex.png",
     "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.0
@@ -20,11 +20,11 @@
     "stepHeight": 1.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -13421773,
+      "value": -1,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -6710887,
+      "value": -1,
       "falpha": 0.0
     },
     "creativeTabs": [
@@ -33,8 +33,8 @@
       }
     ],
     "isBoss": true,
-    "bossBarColor": "WHITE",
-    "bossBarType": "PROGRESS",
+    "bossBarColor": "PURPLE",
+    "bossBarType": "NOTCHED_6",
     "equipmentMainHand": {
       "value": ""
     },
@@ -55,21 +55,21 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "ILLAGER",
-    "attackStrength": 3,
+    "attackStrength": 25,
     "attackKnockback": 0.0,
-    "knockbackResistance": 50.0,
+    "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
     "health": 1000,
-    "xpAmount": 50,
+    "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 15,
+    "deathTime": 20,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
@@ -81,7 +81,7 @@
     "immuneToCactus": true,
     "immuneToDrowning": true,
     "immuneToLightning": true,
-    "immuneToPotions": false,
+    "immuneToPotions": true,
     "immuneToPlayer": false,
     "immuneToExplosion": true,
     "immuneToTrident": false,
@@ -106,19 +106,13 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "whenMobDies": {
-      "name": "DayiciUstaEntityDies"
-    },
     "whenThisMobKillsAnother": {
-      "name": "DayiciUstaThisEntityKillsAnotherOne"
-    },
-    "onMobTickUpdate": {
-      "name": "DayiciUstaOnEntityTickUpdate"
+      "name": "DayiciUstaPhase2ThisEntityKillsAnotherOne"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"795\" y=\"122\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "model": "dayici11.geo.json",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"208\" y=\"72\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"doors_break\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "model": "dayici2.geo.json",
     "groupName": "",
     "animation1": "idle",
     "animation2": "walk",

@@ -13,6 +13,7 @@ import net.mcreator.rival.entity.RoyalGuardsEntity;
 import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.HogRiderEntity;
+import net.mcreator.rival.entity.DayiciUstaPhase2Entity;
 import net.mcreator.rival.entity.DayiciUstaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
 
@@ -92,6 +93,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof DayiciUstaEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof DayiciUstaPhase2Entity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

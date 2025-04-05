@@ -31,6 +31,7 @@ public class RivalModItems {
 	public static final RegistryObject<Item> MAGE_PILLAGER_SPAWN_EGG = REGISTRY.register("mage_pillager_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.MAGE_PILLAGER, -11719630, -13382656, new Item.Properties()));
 	public static final RegistryObject<Item> ZULFI = REGISTRY.register("zulfi", () -> new ZulfiItem());
 	public static final RegistryObject<Item> DAYICI_USTA_SPAWN_EGG = REGISTRY.register("dayici_usta_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_USTA, -13421773, -6710887, new Item.Properties()));
+	public static final RegistryObject<Item> DAYICI_USTA_PHASE_2_SPAWN_EGG = REGISTRY.register("dayici_usta_phase_2_spawn_egg", () -> new ForgeSpawnEggItem(RivalModEntities.DAYICI_USTA_PHASE_2, -1, -1, new Item.Properties()));
 	// Start of user code block custom items
 	// End of user code block custom items
 }

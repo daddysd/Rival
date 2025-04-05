@@ -21,6 +21,7 @@ import net.mcreator.rival.client.renderer.MinerPillagerRenderer;
 import net.mcreator.rival.client.renderer.MagePillagerRenderer;
 import net.mcreator.rival.client.renderer.HogRiderRenderer;
 import net.mcreator.rival.client.renderer.DayiciUstaRenderer;
+import net.mcreator.rival.client.renderer.DayiciUstaPhase2Renderer;
 import net.mcreator.rival.client.renderer.BadVillagerRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -39,5 +40,6 @@ public class RivalModEntityRenderers {
 		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER.get(), MagePillagerRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.MAGE_PILLAGER_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(RivalModEntities.DAYICI_USTA.get(), DayiciUstaRenderer::new);
+		event.registerEntityRenderer(RivalModEntities.DAYICI_USTA_PHASE_2.get(), DayiciUstaPhase2Renderer::new);
 	}
 }

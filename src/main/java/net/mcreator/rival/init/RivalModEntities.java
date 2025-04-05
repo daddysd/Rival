@@ -26,6 +26,7 @@ import net.mcreator.rival.entity.MinerPillagerEntity;
 import net.mcreator.rival.entity.MagePillagerEntityProjectile;
 import net.mcreator.rival.entity.MagePillagerEntity;
 import net.mcreator.rival.entity.HogRiderEntity;
+import net.mcreator.rival.entity.DayiciUstaPhase2Entity;
 import net.mcreator.rival.entity.DayiciUstaEntity;
 import net.mcreator.rival.entity.BadVillagerEntity;
 import net.mcreator.rival.RivalMod;
@@ -78,6 +79,8 @@ public class RivalModEntities {
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(MagePillagerEntityProjectile::new).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<DayiciUstaEntity>> DAYICI_USTA = register("dayici_usta", EntityType.Builder.<DayiciUstaEntity>of(DayiciUstaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(DayiciUstaEntity::new).fireImmune().sized(1.5f, 4f));
+	public static final RegistryObject<EntityType<DayiciUstaPhase2Entity>> DAYICI_USTA_PHASE_2 = register("dayici_usta_phase_2", EntityType.Builder.<DayiciUstaPhase2Entity>of(DayiciUstaPhase2Entity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DayiciUstaPhase2Entity::new).fireImmune().sized(1.5f, 4f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -99,6 +102,7 @@ public class RivalModEntities {
 			SwordPillagerDiamondSwordEntity.init();
 			MagePillagerEntity.init();
 			DayiciUstaEntity.init();
+			DayiciUstaPhase2Entity.init();
 		});
 	}
 
@@ -115,5 +119,6 @@ public class RivalModEntities {
 		event.put(SWORD_PILLAGER_DIAMOND_SWORD.get(), SwordPillagerDiamondSwordEntity.createAttributes().build());
 		event.put(MAGE_PILLAGER.get(), MagePillagerEntity.createAttributes().build());
 		event.put(DAYICI_USTA.get(), DayiciUstaEntity.createAttributes().build());
+		event.put(DAYICI_USTA_PHASE_2.get(), DayiciUstaPhase2Entity.createAttributes().build());
 	}
 }

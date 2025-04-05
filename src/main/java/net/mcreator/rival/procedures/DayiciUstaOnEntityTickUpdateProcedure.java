@@ -5,7 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraft.world.level.Level;
-// Replacing line 8 with correct imports
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -65,7 +64,7 @@ public class DayiciUstaOnEntityTickUpdateProcedure {
                     // Play attack2 animation
                     dayiciEntity.setAnimation("attack2");
                     
-                    // Summon lightning bolts
+                    // Summon lightning bolts based on entity's direction
                     summonLightningPattern(entity);
                     
                     // Mark this threshold as triggered for this entity
@@ -86,82 +85,55 @@ public class DayiciUstaOnEntityTickUpdateProcedure {
         double z = entity.getZ();
         Level level = entity.level();
         
+        // Get the direction the entity is facing
+        float yRot = entity.getYRot(); // Yaw angle (horizontal rotation)
+        
+        // Convert yaw to radians (Minecraft uses degrees)
+        double radians = Math.toRadians(yRot);
+        
+        // Calculate directional vectors
+        // In Minecraft, 0 degrees is south, 90 is west, 180 is north, 270 is east
+        double dirX = -Math.sin(radians); // X component of direction vector
+        double dirZ = Math.cos(radians);  // Z component of direction vector
+        
         // Ensure we're on the server side
         if (level instanceof ServerLevel) {
             ServerLevel serverLevel = (ServerLevel) level;
             
-            // First lightning bolt
-            LightningBolt bolt1 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt1.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 1), (int)y, (int)z)));
-            serverLevel.addFreshEntity(bolt1);
-            
-            // Second lightning bolt
-            LightningBolt bolt2 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt2.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 2), (int)y, (int)(z + 1))));
-            serverLevel.addFreshEntity(bolt2);
-            
-            // Third lightning bolt
-            LightningBolt bolt3 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt3.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 2), (int)y, (int)(z - 1))));
-            serverLevel.addFreshEntity(bolt3);
-            
-            // Fourth lightning bolt
-            LightningBolt bolt4 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt4.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 2), (int)y, (int)z)));
-            serverLevel.addFreshEntity(bolt4);
-            
-            // Fifth lightning bolt
-            LightningBolt bolt5 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt5.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z + 2))));
-            serverLevel.addFreshEntity(bolt5);
-            
-            // Sixth lightning bolt
-            LightningBolt bolt6 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt6.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z + 1))));
-            serverLevel.addFreshEntity(bolt6);
-            
-            // Seventh lightning bolt
-            LightningBolt bolt7 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt7.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)z)));
-            serverLevel.addFreshEntity(bolt7);
-            
-            // Eighth lightning bolt
-            LightningBolt bolt8 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt8.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z - 1))));
-            serverLevel.addFreshEntity(bolt8);
-            
-            // Ninth lightning bolt
-            LightningBolt bolt9 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt9.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z - 2))));
-            serverLevel.addFreshEntity(bolt9);
-
-            LightningBolt bolt10 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt10.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z - 3))));
-            serverLevel.addFreshEntity(bolt10);
-
-            LightningBolt bolt11 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt11.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z - 2))));
-            serverLevel.addFreshEntity(bolt11);
-
-            LightningBolt bolt12 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt12.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z - 1))));
-            serverLevel.addFreshEntity(bolt12);
-
-            LightningBolt bolt13 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt13.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z))));
-            serverLevel.addFreshEntity(bolt13);
-
-            LightningBolt bolt14 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt14.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z + 1))));
-            serverLevel.addFreshEntity(bolt14);
-
-            LightningBolt bolt15 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt15.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z + 2))));
-            serverLevel.addFreshEntity(bolt15);
-            
-            LightningBolt bolt16 = EntityType.LIGHTNING_BOLT.create(serverLevel);
-            bolt16.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)(x - 3), (int)y, (int)(z + 3))));
-            serverLevel.addFreshEntity(bolt16);
+            // Pattern layout points transformed according to direction
+            // Original design had a pattern going in -X direction, we'll now rotate it
+            spawnLightningAt(serverLevel, x + dirX, y, z + dirZ);
+            spawnLightningAt(serverLevel, x + dirX * 2, y, z + dirZ * 2 + dirX);  // Added rotation offset
+            spawnLightningAt(serverLevel, x + dirX * 2, y, z + dirZ * 2 - dirX);  // Subtracted rotation offset
+            spawnLightningAt(serverLevel, x + dirX * 2, y, z + dirZ * 2);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 + dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 + dirX);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 - dirX);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 - dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 - dirX * 3);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 - dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 - dirX);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 + dirX);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 + dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 3, y, z + dirZ * 3 + dirX * 3);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 - dirX * 4);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 - dirX * 3);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 - dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 - dirX);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 + dirX * 4);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 + dirX * 3);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 + dirX * 2);
+            spawnLightningAt(serverLevel, x + dirX * 4, y, z + dirZ * 4 + dirX);
         }
+    }
+    
+    // Helper method to spawn a single lightning bolt
+    private static void spawnLightningAt(ServerLevel serverLevel, double x, double y, double z) {
+        LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(serverLevel);
+        bolt.moveTo(Vec3.atBottomCenterOf(new BlockPos((int)x, (int)y, (int)z)));
+        serverLevel.addFreshEntity(bolt);
     }
 }
